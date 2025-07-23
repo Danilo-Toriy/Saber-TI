@@ -1,0 +1,256 @@
+inherited CadUsuariosF: TCadUsuariosF
+  Left = 363
+  Height = 709
+  Top = 156
+  Width = 1215
+  Caption = 'Tela de Cadastro de Usuários'
+  ClientHeight = 709
+  ClientWidth = 1215
+  Constraints.MaxHeight = 722
+  Constraints.MaxWidth = 1229
+  Constraints.MinHeight = 520
+  Constraints.MinWidth = 820
+  OnClose = FormClose
+  OnCreate = FormCreate
+  inherited PageControl1: TPageControl
+    Height = 709
+    Width = 1215
+    inherited tbPesquisa: TTabSheet
+      ClientHeight = 676
+      ClientWidth = 1207
+      inherited Panel1: TPanel
+        Height = 676
+        Width = 1207
+        ClientHeight = 676
+        ClientWidth = 1207
+        OnClick = Panel1Click
+        inherited panelSearch: TPanel
+          Width = 1207
+          ClientWidth = 1207
+          inherited edtSearch: TEdit
+            OnChange = edtSearchChange
+          end
+        end
+        inherited panelBtns: TPanel
+          Top = 618
+          Width = 1207
+          ClientWidth = 1207
+          inherited btnNew: TBitBtn
+            OnClick = btnNewClick
+          end
+          inherited btnClose: TBitBtn
+            Left = 1036
+          end
+        end
+        inherited Panel2: TPanel
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          inherited DBGridModel: TDBGrid
+            Columns = <            
+              item
+                PickList.Strings = (                )
+                Title.Caption = 'ID'
+                Width = 30
+                FieldName = 'id'
+              end            
+              item
+                PickList.Strings = (                )
+                Title.Caption = 'Usuário'
+                Width = 200
+                FieldName = 'usuario'
+              end            
+              item
+                PickList.Strings = (                )
+                Title.Caption = 'Nome Completo'
+                Width = 400
+                FieldName = 'nome_completo'
+              end            
+              item
+                PickList.Strings = (                )
+                Title.Caption = 'Senha'
+                Width = 200
+                FieldName = 'senha'
+              end>
+            DataSource = dsUser
+            OnDblClick = DBGridModelDblClick
+          end
+        end
+      end
+    end
+    inherited tbCadastro: TTabSheet
+      ClientHeight = 676
+      ClientWidth = 1207
+      OnHide = tbCadastroHide
+      inherited panelCRUD: TPanel
+        Top = 613
+        Width = 1207
+        ClientWidth = 1207
+        Color = 15791352
+        ParentBackground = False
+        ParentColor = False
+        inherited btnRec: TBitBtn
+          OnClick = btnRecClick
+        end
+        inherited btnEdit: TBitBtn
+          OnClick = btnEditClick
+        end
+        inherited btnCancel: TBitBtn
+          OnClick = btnCancelClick
+        end
+        inherited btnDel: TBitBtn
+          OnClick = btnDelClick
+        end
+      end
+      object Panel3: TPanel[1]
+        Left = 0
+        Height = 613
+        Top = 0
+        Width = 1207
+        Align = alClient
+        ClientHeight = 613
+        ClientWidth = 1207
+        Color = 16251641
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 1
+        object panelDiv: TPanel
+          Left = 96
+          Height = 527
+          Top = 48
+          Width = 1023
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          ClientHeight = 527
+          ClientWidth = 1023
+          Color = 16643824
+          ParentBackground = False
+          ParentColor = False
+          TabOrder = 0
+          object dbedtUser: TDBEdit
+            Left = 376
+            Height = 28
+            Top = 200
+            Width = 264
+            DataField = 'usuario'
+            DataSource = dsUser
+            Enabled = False
+            MaxLength = 100
+            TabOrder = 0
+          end
+          object Label2: TLabel
+            Left = 448
+            Height = 25
+            Top = 45
+            Width = 24
+            Caption = 'ID:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -18
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label3: TLabel
+            Left = 120
+            Height = 25
+            Top = 112
+            Width = 143
+            Caption = 'Nome Completo:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -18
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label4: TLabel
+            Left = 472
+            Height = 25
+            Top = 168
+            Width = 70
+            Caption = 'Usuário:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -18
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object dbedtName: TDBEdit
+            Left = 264
+            Height = 28
+            Top = 112
+            Width = 500
+            DataField = 'nome_completo'
+            DataSource = dsUser
+            Enabled = False
+            MaxLength = 50
+            TabOrder = 1
+            OnChange = dbedtNameChange
+          end
+          object dbedtUserID: TDBEdit
+            Left = 480
+            Height = 28
+            Top = 45
+            Width = 60
+            DataField = 'id'
+            DataSource = dsUser
+            Alignment = taRightJustify
+            Enabled = False
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object Label1: TLabel
+            Left = 480
+            Height = 25
+            Top = 242
+            Width = 57
+            Caption = 'Senha:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -18
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object dbedtPass: TDBEdit
+            Left = 376
+            Height = 28
+            Top = 272
+            Width = 264
+            DataField = 'senha'
+            DataSource = dsUser
+            Enabled = False
+            MaxLength = 50
+            TabOrder = 3
+          end
+          object Label5: TLabel
+            Left = 416
+            Height = 25
+            Top = 320
+            Width = 172
+            Caption = 'Confirme sua senha:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -18
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object edtConfirmacao: TEdit
+            Left = 376
+            Height = 28
+            Top = 352
+            Width = 264
+            Enabled = False
+            TabOrder = 4
+          end
+        end
+      end
+    end
+  end
+  object dsUser: TDataSource[1]
+    DataSet = DataModule1.zqryUsuarios
+    OnStateChange = dsUserStateChange
+    Left = 1146
+    Top = 248
+  end
+end

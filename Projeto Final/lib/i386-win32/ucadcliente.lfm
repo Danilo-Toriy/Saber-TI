@@ -1,0 +1,47 @@
+inherited XCadModelo1: TXCadModelo1
+  Left = 366
+  Height = 707
+  Top = 169
+  Width = 1222
+  ClientHeight = 707
+  ClientWidth = 1222
+  Constraints.MaxHeight = 722
+  Constraints.MaxWidth = 1229
+  Constraints.MinHeight = 520
+  Constraints.MinWidth = 820
+  inherited PageControl1: TPageControl
+    Height = 707
+    Width = 1222
+    inherited tbPesquisa: TTabSheet
+      ClientHeight = 674
+      ClientWidth = 1214
+      inherited Panel1: TPanel
+        Height = 674
+        Width = 1214
+        ClientHeight = 674
+        ClientWidth = 1214
+        inherited panelSearch: TPanel
+          Width = 1214
+          ClientWidth = 1214
+        end
+        inherited panelBtns: TPanel
+          Top = 616
+          Width = 1214
+          ClientWidth = 1214
+          inherited btnClose: TBitBtn
+            Left = 1043
+          end
+        end
+      end
+    end
+    inherited tbCadastro: TTabSheet
+      ClientHeight = 674
+      ClientWidth = 1214
+      inherited panelCRUD: TPanel
+        Top = 611
+        Width = 1214
+        ClientWidth = 1214
+      end
+    end
+  end
+end

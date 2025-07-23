@@ -1,0 +1,60 @@
+object Menu: TMenu
+  Left = 381
+  Height = 698
+  Top = 268
+  Width = 1301
+  Align = alClient
+  Caption = 'Menu'
+  DesignTimePPI = 120
+  Menu = MainMenu1
+  LCLVersion = '4.0.0.4'
+  WindowState = wsMaximized
+  object MainMenu1: TMainMenu
+    Left = 1208
+    Top = 16
+    object MenuCad: TMenuItem
+      Caption = 'Cadastros'
+      object CadCategoria: TMenuItem
+        Caption = 'Categorias'
+        OnClick = CadCategoriaClick
+      end
+      object CadClient: TMenuItem
+        Caption = 'Clientes'
+        OnClick = CadClientClick
+      end
+      object CadProd: TMenuItem
+        Caption = 'Produtos'
+      end
+      object CadUser: TMenuItem
+        Caption = 'Usuários'
+        OnClick = CadUserClick
+      end
+    end
+    object MenuSales: TMenuItem
+      Caption = 'Vendas'
+      object Orcamento: TMenuItem
+        Caption = 'Orçamento'
+        OnClick = OrcamentoClick
+      end
+    end
+    object MenuReport: TMenuItem
+      Caption = 'Relatórios'
+      object ReportCreate: TMenuItem
+        Caption = 'Gerar Relatório'
+      end
+      object ReportPrint: TMenuItem
+        Caption = 'Imprimir'
+      end
+      object ReportExport: TMenuItem
+        Caption = 'Exportar'
+      end
+    end
+    object MenuAbout: TMenuItem
+      Caption = 'Sobre'
+    end
+    object MenuExit: TMenuItem
+      Caption = 'Sair'
+      OnClick = MenuExitClick
+    end
+  end
+end

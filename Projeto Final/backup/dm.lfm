@@ -1,0 +1,205 @@
+object DataModule1: TDataModule1
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 536
+  HorizontalOffset = 666
+  VerticalOffset = 413
+  Width = 575
+  PPI = 120
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'RawStringEncoding=DB_CP'
+    )
+    Connected = True
+    AfterConnect = ZConnection1AfterConnect
+    DisableSavepoints = False
+    HostName = 'localhost'
+    Port = 5432
+    Database = 'postgres'
+    User = 'postgres'
+    Password = '12345'
+    Protocol = 'postgresql'
+    Left = 89
+    Top = 61
+  end
+  object zqryCategorias: TZQuery
+    Connection = ZConnection1
+    AfterPost = zqryCategoriasAfterPost
+    UpdateObject = updtCategorias
+    Active = True
+    SQL.Strings = (
+      'select * from categoria_produto;'
+    )
+    Params = <>
+    Left = 192
+    Top = 61
+    object zqryCategoriascategoriaprodutoid: TZIntegerField
+      FieldKind = fkData
+      FieldName = 'categoriaprodutoid'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zqryCategoriasds_categoria_produto: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'ds_categoria_produto'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 50
+    end
+    object zqryCategoriasdescricao: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+  end
+  object updtCategorias: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM categoria_produto'
+      'WHERE'
+      '  categoria_produto.categoriaprodutoid = :OLD_categoriaprodutoid'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO categoria_produto'
+      '  (categoriaprodutoid, ds_categoria_produto, descricao)'
+      'VALUES'
+      '  (:categoriaprodutoid, :ds_categoria_produto, :descricao)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE categoria_produto SET'
+      '  categoriaprodutoid = :categoriaprodutoid,'
+      '  ds_categoria_produto = :ds_categoria_produto,'
+      '  descricao = :descricao'
+      'WHERE'
+      '  categoria_produto.categoriaprodutoid = :OLD_categoriaprodutoid'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 464
+    Top = 61
+    ParamData = <    
+      item
+        Name = 'categoriaprodutoid'
+      end    
+      item
+        Name = 'ds_categoria_produto'
+      end    
+      item
+        Name = 'descricao'
+      end    
+      item
+        Name = 'OLD_categoriaprodutoid'
+      end>
+  end
+  object zqryUsuarios: TZQuery
+    Connection = ZConnection1
+    AfterPost = zqryUsuariosAfterPost
+    UpdateObject = updtUsuarios
+    Active = True
+    SQL.Strings = (
+      'select * from usuarios;'
+    )
+    Params = <>
+    Left = 194
+    Top = 153
+    object zqryUsuariosid: TZIntegerField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqryUsuariosusuario: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'usuario'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object zqryUsuariosnome_completo: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'nome_completo'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object zqryUsuariossenha: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'senha'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+  end
+  object updtUsuarios: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM usuarios'
+      'WHERE'
+      '  ((usuarios.id IS NULL AND :OLD_id IS NULL) OR (usuarios.id = :OLD_id))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO usuarios'
+      '  (id, usuario, nome_completo, senha)'
+      'VALUES'
+      '  (:id, :usuario, :nome_completo, :senha)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE usuarios SET'
+      '  id = :id,'
+      '  usuario = :usuario,'
+      '  nome_completo = :nome_completo,'
+      '  senha = :senha'
+      'WHERE'
+      '  ((usuarios.id IS NULL AND :OLD_id IS NULL) OR (usuarios.id = :OLD_id))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 464
+    Top = 153
+    ParamData = <    
+      item
+        Name = 'id'
+      end    
+      item
+        Name = 'usuario'
+      end    
+      item
+        Name = 'nome_completo'
+      end    
+      item
+        Name = 'senha'
+      end    
+      item
+        Name = 'OLD_id'
+      end>
+  end
+  object qryGenerica: TZQuery
+    Connection = ZConnection1
+    SQL.Strings = (
+      'select * from usuarios;'
+    )
+    Params = <>
+    Left = 80
+    Top = 152
+  end
+end
