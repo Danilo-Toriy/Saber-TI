@@ -150,6 +150,9 @@ select orcamentoid, SUM(qt_produto) from ORCAMENTO_ITEM group by orcamentoid;
 CREATE SEQUENCE usuario_idtemp;
 SELECT nextval ('usuario_idtemp') AS COD;
 
+create sequence cliente_idtemp;
+select nextval('cliente_idtemp');
+
 select * from categoria_produto;
 
 alter table categoria_produto add descricao varchar (100);
@@ -180,3 +183,47 @@ update cliente c
 set tipo_cliente = 'Pessoa Física'
 
 select * from cliente c;
+
+alter table cliente add telefone_cliente varchar(20);
+alter table cliente add email_cliente varchar(100);
+
+update cliente c 
+set telefone_cliente = '(44)99999-9999'
+where clienteid = 1;
+
+update cliente c 
+set telefone_cliente = '(44)98888-8888'
+where clienteid = 2;
+
+update cliente c 
+set telefone_cliente = '(43)99898-9898'
+where clienteid = 3;
+
+update cliente c 
+set telefone_cliente = '(41)98888-9999'
+where clienteid = 4;
+
+update cliente c
+set email_cliente = 'zezinho@gmail.com'
+where clienteid = 1;
+
+update cliente c
+set email_cliente = 'pepeoliver@hotmail.com'
+where clienteid = 2;
+
+update cliente c
+set email_cliente = 'mariamaria@yahoo.com.br'
+where clienteid = 3;
+
+update cliente c
+set email_cliente = 'sandra123@gmail.com'
+where clienteid = 4;
+
+alter table cliente 
+alter column telefone_cliente set not null;
+
+alter table cliente 
+alter column email_cliente set not null;
+
+
+

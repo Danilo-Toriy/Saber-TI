@@ -2,8 +2,8 @@ object DataModule1: TDataModule1
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 536
-  HorizontalOffset = 666
-  VerticalOffset = 413
+  HorizontalOffset = 625
+  VerticalOffset = 318
   Width = 575
   PPI = 120
   object ZConnection1: TZConnection
@@ -20,14 +20,13 @@ object DataModule1: TDataModule1
     User = 'postgres'
     Password = '12345'
     Protocol = 'postgresql'
-    Left = 89
+    Left = 80
     Top = 61
   end
   object zqryCategorias: TZQuery
     Connection = ZConnection1
     AfterPost = zqryCategoriasAfterPost
     UpdateObject = updtCategorias
-    Active = True
     SQL.Strings = (
       'select * from categoria_produto;'
     )
@@ -105,7 +104,6 @@ object DataModule1: TDataModule1
     Connection = ZConnection1
     AfterPost = zqryUsuariosAfterPost
     UpdateObject = updtUsuarios
-    Active = True
     SQL.Strings = (
       'select * from usuarios;'
     )
@@ -201,5 +199,278 @@ object DataModule1: TDataModule1
     Params = <>
     Left = 80
     Top = 152
+  end
+  object zqryClientes: TZQuery
+    Connection = ZConnection1
+    AfterPost = zqryClientesAfterPost
+    UpdateObject = updtClientes
+    SQL.Strings = (
+      'select * from cliente'
+    )
+    Params = <>
+    Left = 194
+    Top = 248
+    object zqryClientesclienteid: TZIntegerField
+      FieldKind = fkData
+      FieldName = 'clienteid'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zqryClientestipo_cliente: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'tipo_cliente'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zqryClientescpf_cnpj_cliente: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'cpf_cnpj_cliente'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 18
+    end
+    object zqryClientesnome_cliente: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'nome_cliente'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 100
+    end
+    object zqryClientestelefone_cliente: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'telefone_cliente'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zqryClientesemail_cliente: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'email_cliente'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 100
+    end
+  end
+  object updtClientes: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM cliente'
+      'WHERE'
+      '  cliente.clienteid = :OLD_clienteid'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO cliente'
+      '  (clienteid, tipo_cliente, cpf_cnpj_cliente, nome_cliente, telefone_cliente, '
+      '   email_cliente)'
+      'VALUES'
+      '  (:clienteid, :tipo_cliente, :cpf_cnpj_cliente, :nome_cliente, :telefone_cliente, '
+      '   :email_cliente)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE cliente SET'
+      '  clienteid = :clienteid,'
+      '  tipo_cliente = :tipo_cliente,'
+      '  cpf_cnpj_cliente = :cpf_cnpj_cliente,'
+      '  nome_cliente = :nome_cliente,'
+      '  telefone_cliente = :telefone_cliente,'
+      '  email_cliente = :email_cliente'
+      'WHERE'
+      '  cliente.clienteid = :OLD_clienteid'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 464
+    Top = 248
+    ParamData = <    
+      item
+        Name = 'clienteid'
+      end    
+      item
+        Name = 'tipo_cliente'
+      end    
+      item
+        Name = 'cpf_cnpj_cliente'
+      end    
+      item
+        Name = 'nome_cliente'
+      end    
+      item
+        Name = 'telefone_cliente'
+      end    
+      item
+        Name = 'email_cliente'
+      end    
+      item
+        Name = 'OLD_clienteid'
+      end>
+  end
+  object zqryProdutos: TZQuery
+    Connection = ZConnection1
+    UpdateObject = updtProdutos
+    Active = True
+    SQL.Strings = (
+      'select produtoid, ds_produto, ds_categoria_produto, obs_produto, vl_venda_produto,'
+      'dt_cadastro_produto, status_produto, p.categoriaprodutoid from produto p'
+      'left join categoria_produto cp'
+      'on p.categoriaprodutoid = cp.categoriaprodutoid;'
+    )
+    Params = <>
+    Left = 200
+    Top = 344
+    object zqryProdutosprodutoid: TZIntegerField
+      FieldKind = fkData
+      FieldName = 'produtoid'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zqryProdutosds_produto: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'ds_produto'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 50
+    end
+    object zqryProdutosds_categoria_produto: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'ds_categoria_produto'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 50
+    end
+    object zqryProdutosobs_produto: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'obs_produto'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
+    end
+    object zqryProdutosvl_venda_produto: TZBCDField
+      FieldKind = fkData
+      FieldName = 'vl_venda_produto'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = 15
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object zqryProdutosdt_cadastro_produto: TZDateTimeField
+      FieldKind = fkData
+      FieldName = 'dt_cadastro_produto'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zqryProdutosstatus_produto: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'status_produto'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 10
+    end
+    object zqryProdutoscategoriaprodutoid: TZIntegerField
+      FieldKind = fkData
+      FieldName = 'categoriaprodutoid'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object updtProdutos: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM produto'
+      'WHERE'
+      '  produto.produtoid = :OLD_produtoid'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO produto'
+      '  (produtoid, ds_produto, ds_categoria_produto, obs_produto, vl_venda_produto, '
+      '   dt_cadastro_produto, status_produto, categoriaprodutoid)'
+      'VALUES'
+      '  (:produtoid, :ds_produto, :ds_categoria_produto, :obs_produto, :vl_venda_produto, '
+      '   :dt_cadastro_produto, :status_produto, :categoriaprodutoid)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE produto SET'
+      '  produtoid = :produtoid,'
+      '  ds_produto = :ds_produto,'
+      '  ds_categoria_produto = :ds_categoria_produto,'
+      '  obs_produto = :obs_produto,'
+      '  vl_venda_produto = :vl_venda_produto,'
+      '  dt_cadastro_produto = :dt_cadastro_produto,'
+      '  status_produto = :status_produto,'
+      '  categoriaprodutoid = :categoriaprodutoid'
+      'WHERE'
+      '  produto.produtoid = :OLD_produtoid'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 464
+    Top = 340
+    ParamData = <    
+      item
+        Name = 'produtoid'
+      end    
+      item
+        Name = 'ds_produto'
+      end    
+      item
+        Name = 'ds_categoria_produto'
+      end    
+      item
+        Name = 'obs_produto'
+      end    
+      item
+        Name = 'vl_venda_produto'
+      end    
+      item
+        Name = 'dt_cadastro_produto'
+      end    
+      item
+        Name = 'status_produto'
+      end    
+      item
+        Name = 'categoriaprodutoid'
+      end    
+      item
+        Name = 'OLD_produtoid'
+      end>
   end
 end

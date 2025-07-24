@@ -11,7 +11,7 @@ uses
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, uMenu, dm, zcomponent, uxcadmodelo, uCadCategorias, ucadusuarios,
-  uCadCliente;
+  uCadCliente, uCadProdutos;
 
 {$R *.res}
 
@@ -24,7 +24,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TDataModule1, DataModule1);
   Application.CreateForm(TMenu, Menu);
-  Application.CreateForm(TXCadModelo1, XCadModelo1);
   Application.Run;
 end.
 

@@ -5,7 +5,7 @@ unit uMenu;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, uCadCategorias, uCadUsuarios;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, uCadCategorias, uCadUsuarios, uCadCliente, uCadProdutos;
 
 type
 
@@ -28,6 +28,7 @@ type
     MenuExit: TMenuItem;
     procedure CadCategoriaClick(Sender: TObject);
     procedure CadClientClick(Sender: TObject);
+    procedure CadProdClick(Sender: TObject);
     procedure CadUserClick(Sender: TObject);
     procedure MenuExitClick(Sender: TObject);
     procedure OrcamentoClick(Sender: TObject);
@@ -64,7 +65,14 @@ end;
 
 procedure TMenu.CadClientClick(Sender: TObject);
 begin
+  CadClienteF := TCadClienteF.Create(Self);
+  CadClienteF.ShowModal;
+end;
 
+procedure TMenu.CadProdClick(Sender: TObject);
+begin
+  CadProdutosF := TCadProdutosF.Create(Self);
+  CadProdutosF.ShowModal;
 end;
 
 procedure TMenu.CadUserClick(Sender: TObject);

@@ -1,10 +1,10 @@
 inherited CadCategoriasF: TCadCategoriasF
-  Left = 363
-  Height = 700
-  Top = 177
+  Left = 367
+  Height = 701
+  Top = 170
   Width = 1166
   Caption = 'Tela de Cadastro de Categorias'
-  ClientHeight = 700
+  ClientHeight = 701
   ClientWidth = 1166
   Constraints.MaxHeight = 722
   Constraints.MaxWidth = 1229
@@ -13,15 +13,17 @@ inherited CadCategoriasF: TCadCategoriasF
   OnClose = FormClose
   OnCreate = FormCreate
   inherited PageControl1: TPageControl
-    Height = 700
+    Height = 701
     Width = 1166
+    ActivePage = tbCadastro
+    TabIndex = 1
     inherited tbPesquisa: TTabSheet
-      ClientHeight = 667
+      ClientHeight = 668
       ClientWidth = 1158
       inherited Panel1: TPanel
-        Height = 667
+        Height = 668
         Width = 1158
-        ClientHeight = 667
+        ClientHeight = 668
         ClientWidth = 1158
         inherited panelSearch: TPanel
           Width = 1158
@@ -32,7 +34,7 @@ inherited CadCategoriasF: TCadCategoriasF
         end
         inherited panelBtns: TPanel
           Height = 63
-          Top = 604
+          Top = 605
           Width = 1158
           ClientHeight = 63
           ClientWidth = 1158
@@ -45,14 +47,14 @@ inherited CadCategoriasF: TCadCategoriasF
           end
         end
         inherited Panel2: TPanel
-          Height = 477
+          Height = 478
           Width = 937
           Anchors = [akTop, akLeft, akRight, akBottom]
-          ClientHeight = 477
+          ClientHeight = 478
           ClientWidth = 937
           TabOrder = 1
           inherited DBGridModel: TDBGrid
-            Height = 465
+            Height = 466
             Width = 915
             Columns = <            
               item
@@ -80,11 +82,11 @@ inherited CadCategoriasF: TCadCategoriasF
       end
     end
     inherited tbCadastro: TTabSheet
-      ClientHeight = 667
+      ClientHeight = 668
       ClientWidth = 1158
       OnHide = tbCadastroHide
       inherited panelCRUD: TPanel
-        Top = 604
+        Top = 605
         Width = 1158
         ClientWidth = 1158
         Color = 15791352
@@ -107,11 +109,11 @@ inherited CadCategoriasF: TCadCategoriasF
       end
       object Panel3: TPanel[1]
         Left = 0
-        Height = 604
+        Height = 605
         Top = 0
         Width = 1158
         Align = alClient
-        ClientHeight = 604
+        ClientHeight = 605
         ClientWidth = 1158
         Color = 16251641
         ParentBackground = False
@@ -119,11 +121,11 @@ inherited CadCategoriasF: TCadCategoriasF
         TabOrder = 1
         object panelDiv: TPanel
           Left = 56
-          Height = 523
+          Height = 524
           Top = 48
           Width = 1049
           Anchors = [akTop, akLeft, akRight, akBottom]
-          ClientHeight = 523
+          ClientHeight = 524
           ClientWidth = 1049
           Color = 16643824
           ParentBackground = False
@@ -138,7 +140,7 @@ inherited CadCategoriasF: TCadCategoriasF
             DataField = 'descricao'
             DataSource = dsCategorias
             Enabled = False
-            MaxLength = 100
+            MaxLength = 0
             TabOrder = 0
           end
           object Label2: TLabel
@@ -188,7 +190,7 @@ inherited CadCategoriasF: TCadCategoriasF
             DataField = 'ds_categoria_produto'
             DataSource = dsCategorias
             Enabled = False
-            MaxLength = 50
+            MaxLength = 0
             TabOrder = 1
           end
           object dbedtID: TDBEdit

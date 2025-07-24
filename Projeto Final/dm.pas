@@ -18,6 +18,20 @@ type
     zqryCategoriasdescricao: TZRawStringField;
     zqryCategoriasds_categoria_produto: TZRawStringField;
     updtCategorias: TZUpdateSQL;
+    zqryClientesclienteid: TZIntegerField;
+    zqryClientescpf_cnpj_cliente: TZRawStringField;
+    zqryClientesemail_cliente: TZRawStringField;
+    zqryClientesnome_cliente: TZRawStringField;
+    zqryClientestelefone_cliente: TZRawStringField;
+    zqryClientestipo_cliente: TZRawStringField;
+    zqryProdutoscategoriaprodutoid: TZIntegerField;
+    zqryProdutosds_categoria_produto: TZRawStringField;
+    zqryProdutosds_produto: TZRawStringField;
+    zqryProdutosdt_cadastro_produto: TZDateTimeField;
+    zqryProdutosobs_produto: TZRawStringField;
+    zqryProdutosprodutoid: TZIntegerField;
+    zqryProdutosstatus_produto: TZRawStringField;
+    zqryProdutosvl_venda_produto: TZBCDField;
     zqryUsuarios: TZQuery;
     updtUsuarios: TZUpdateSQL;
     zqryUsuariosid: TZIntegerField;
@@ -27,9 +41,12 @@ type
     qryGenerica: TZQuery;
     zqryClientes: TZQuery;
     updtClientes: TZUpdateSQL;
+    zqryProdutos: TZQuery;
+    updtProdutos: TZUpdateSQL;
     procedure DataModuleCreate(Sender: TObject);
     procedure ZConnection1AfterConnect(Sender: TObject);
     procedure zqryCategoriasAfterPost(DataSet: TDataSet);
+    procedure zqryClientesAfterPost(DataSet: TDataSet);
     procedure zqryUsuariosAfterPost(DataSet: TDataSet);
   private
 
@@ -61,6 +78,18 @@ begin
                          'categoria_produto '+
                          'ORDER BY categoriaprodutoid ASC');
   zqryCategorias.Open;
+end;
+
+procedure TDataModule1.zqryClientesAfterPost(DataSet: TDataSet);
+begin
+  zqryClientes.Close;
+  zqryClientes.SQL.Clear;
+  zqryClientes.SQL.Add('SELECT '+
+                       '* '+
+                       'FROM '+
+                       'cliente '+
+                       'ORDER BY clienteid ASC');
+  zqryClientes.Open;
 end;
 
 procedure TDataModule1.zqryUsuariosAfterPost(DataSet: TDataSet);

@@ -35,6 +35,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure panelCRUDClick(Sender: TObject);
     procedure panelDivClick(Sender: TObject);
+    procedure panelSearchClick(Sender: TObject);
     procedure tbCadastroHide(Sender: TObject);
   private
 
@@ -180,6 +181,11 @@ begin
 end;
 
 procedure TCadCategoriasF.panelDivClick(Sender: TObject);
+begin
+
+end;
+
+procedure TCadCategoriasF.panelSearchClick(Sender: TObject);
 begin
 
 end;
