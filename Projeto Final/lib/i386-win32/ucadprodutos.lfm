@@ -1,11 +1,11 @@
-inherited CadClienteF: TCadClienteF
-  Left = 367
+inherited CadProdutosF: TCadProdutosF
+  Left = 418
   Height = 707
   Top = 184
-  Width = 1183
-  Caption = 'Tela de Cadastro de Cliente'
+  Width = 1200
+  Caption = 'Tela de Cadastro de Produtos'
   ClientHeight = 707
-  ClientWidth = 1183
+  ClientWidth = 1200
   Constraints.MaxHeight = 722
   Constraints.MaxWidth = 1229
   Constraints.MinHeight = 520
@@ -14,94 +14,105 @@ inherited CadClienteF: TCadClienteF
   OnCreate = FormCreate
   inherited PageControl1: TPageControl
     Height = 707
-    Width = 1183
-    ActivePage = tbCadastro
-    TabIndex = 1
+    Width = 1200
     inherited tbPesquisa: TTabSheet
       ClientHeight = 674
-      ClientWidth = 1175
+      ClientWidth = 1192
       inherited Panel1: TPanel
         Height = 674
-        Width = 1175
+        Width = 1192
         ClientHeight = 674
-        ClientWidth = 1175
+        ClientWidth = 1192
         inherited panelSearch: TPanel
-          Width = 1175
-          ClientWidth = 1175
-          inherited edtSearch: TEdit
-            OnChange = edtSearchChange
-          end
+          Width = 1192
+          ClientWidth = 1192
         end
         inherited panelBtns: TPanel
           Top = 616
-          Width = 1175
-          ClientWidth = 1175
+          Width = 1192
+          ClientWidth = 1192
           inherited btnNew: TBitBtn
             OnClick = btnNewClick
           end
           inherited btnClose: TBitBtn
-            Left = 1004
+            Left = 1021
           end
         end
         inherited Panel2: TPanel
-          Width = 961
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          ClientWidth = 961
           inherited DBGridModel: TDBGrid
-            Width = 939
             Columns = <            
               item
+                Alignment = taCenter
                 PickList.Strings = (                )
+                Title.Alignment = taCenter
                 Title.Caption = 'ID'
                 Width = 40
-                FieldName = 'clienteid'
+                FieldName = 'produtoid'
               end            
               item
+                Alignment = taCenter
                 PickList.Strings = (                )
-                Title.Caption = 'Tipo do Cliente'
-                Width = 110
-                FieldName = 'tipo_cliente'
+                Title.Alignment = taCenter
+                Title.Caption = 'Produto'
+                Width = 200
+                FieldName = 'ds_produto'
               end            
               item
+                Alignment = taCenter
                 PickList.Strings = (                )
-                Title.Caption = 'CPF ou CNPJ'
-                Width = 150
-                FieldName = 'cpf_cnpj_cliente'
+                Title.Alignment = taCenter
+                Title.Caption = 'Categoria'
+                Width = 80
+                FieldName = 'ds_categoria_produto'
               end            
               item
+                Alignment = taCenter
                 PickList.Strings = (                )
-                Title.Caption = 'Nome do Cliente:'
-                Width = 275
-                FieldName = 'nome_cliente'
+                Title.Alignment = taCenter
+                Title.Caption = 'Descrição'
+                Width = 220
+                FieldName = 'obs_produto'
               end            
               item
+                Alignment = taCenter
                 PickList.Strings = (                )
-                Title.Caption = 'Telefone'
+                Title.Alignment = taCenter
+                Title.Caption = 'Valor de Venda(R$)'
+                Width = 140
+                FieldName = 'vl_venda_produto'
+              end            
+              item
+                Alignment = taCenter
+                PickList.Strings = (                )
+                Title.Caption = 'Data de Cadastro'
                 Width = 125
-                FieldName = 'telefone_cliente'
+                FieldName = 'dt_cadastro_produto'
               end            
               item
+                Alignment = taCenter
                 PickList.Strings = (                )
-                Title.Caption = 'Email'
-                Width = 250
-                FieldName = 'email_cliente'
+                Title.Alignment = taCenter
+                Title.Caption = 'Status'
+                Width = 100
+                FieldName = 'status_produto'
               end>
-            DataSource = dsClientes
-            OnDblClick = DBGridModelDblClick
+            DataSource = dsProdutos
+            Font.CharSet = ANSI_CHARSET
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            ParentFont = False
           end
         end
       end
     end
     inherited tbCadastro: TTabSheet
       ClientHeight = 674
-      ClientWidth = 1175
+      ClientWidth = 1192
       OnHide = tbCadastroHide
       inherited panelCRUD: TPanel
-        Height = 55
-        Top = 619
-        Width = 1175
-        ClientHeight = 55
-        ClientWidth = 1175
+        Top = 611
+        Width = 1192
+        ClientWidth = 1192
         inherited btnRec: TBitBtn
           OnClick = btnRecClick
         end
@@ -117,41 +128,41 @@ inherited CadClienteF: TCadClienteF
       end
       object Panel3: TPanel[1]
         Left = 0
-        Height = 619
+        Height = 611
         Top = 0
-        Width = 1175
+        Width = 1192
         Align = alClient
-        ClientHeight = 619
-        ClientWidth = 1175
+        ClientHeight = 611
+        ClientWidth = 1192
         Color = 16251641
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
         object panelDiv: TPanel
-          Left = 136
+          Left = 144
           Height = 480
-          Top = 64
-          Width = 920
+          Top = 56
+          Width = 905
           Anchors = [akTop, akLeft, akRight, akBottom]
           ClientHeight = 480
-          ClientWidth = 920
+          ClientWidth = 905
           Color = 16643824
           ParentBackground = False
           ParentColor = False
           TabOrder = 0
-          object dbedtCPF: TDBEdit
-            Left = 248
+          object dbedtObs: TDBEdit
+            Left = 184
             Height = 28
             Top = 256
             Width = 264
-            DataField = 'cpf_cnpj_cliente'
-            DataSource = dsClientes
+            DataField = 'obs_produto'
+            DataSource = dsProdutos
             Enabled = False
-            MaxLength = 0
+            MaxLength = 300
             TabOrder = 0
           end
           object Label2: TLabel
-            Left = 216
+            Left = 152
             Height = 25
             Top = 67
             Width = 24
@@ -164,24 +175,25 @@ inherited CadClienteF: TCadClienteF
             ParentFont = False
           end
           object Label3: TLabel
-            Left = 184
+            Left = 102
             Height = 25
             Top = 128
-            Width = 56
-            Caption = 'Nome:'
+            Width = 74
+            Caption = 'Produto:'
             Font.CharSet = ANSI_CHARSET
             Font.Height = -18
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             Font.Style = [fsBold]
             ParentFont = False
+            OnClick = Label3Click
           end
-          object LabelCPF: TLabel
-            Left = 204
+          object Label6: TLabel
+            Left = 89
             Height = 25
             Top = 256
-            Width = 36
-            Caption = 'CPF:'
+            Width = 87
+            Caption = 'Descrição:'
             Font.CharSet = ANSI_CHARSET
             Font.Height = -18
             Font.Pitch = fpVariable
@@ -189,120 +201,125 @@ inherited CadClienteF: TCadClienteF
             Font.Style = [fsBold]
             ParentFont = False
           end
-          object dbedtClient: TDBEdit
-            Left = 249
+          object dbedtProd: TDBEdit
+            Left = 185
             Height = 28
             Top = 128
             Width = 231
-            DataField = 'nome_cliente'
-            DataSource = dsClientes
+            DataField = 'ds_produto'
+            DataSource = dsProdutos
             Enabled = False
-            MaxLength = 0
+            MaxLength = 50
             TabOrder = 1
           end
-          object dbedtClientID: TDBEdit
-            Left = 249
+          object dbedtProdID: TDBEdit
+            Left = 185
             Height = 28
             Top = 64
             Width = 60
-            DataField = 'clienteid'
-            DataSource = dsClientes
+            DataField = 'produtoid'
+            DataSource = dsProdutos
             Alignment = taRightJustify
             Enabled = False
             MaxLength = 0
             TabOrder = 2
           end
-          object dbComboBType: TDBComboBox
-            Left = 249
+          object Label1: TLabel
+            Left = 89
+            Height = 25
+            Top = 192
+            Width = 87
+            Caption = 'Categoria:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -18
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object dbedtVal: TDBEdit
+            Left = 185
+            Height = 28
+            Top = 320
+            Width = 152
+            DataField = 'vl_venda_produto'
+            DataSource = dsProdutos
+            Alignment = taRightJustify
+            Enabled = False
+            MaxLength = 0
+            TabOrder = 3
+          end
+          object Label4: TLabel
+            Left = 8
+            Height = 50
+            Top = 320
+            Width = 172
+            Caption = 'Valor em reais(R$):'#13#10'APENAS NÚMEROS!'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -18
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            OnClick = Label4Click
+          end
+          object Label5: TLabel
+            Left = 118
+            Height = 25
+            Top = 395
+            Width = 58
+            Caption = 'Status:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -18
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            OnClick = Label5Click
+          end
+          object dbradio: TDBRadioGroup
+            Left = 184
+            Height = 48
+            Top = 376
+            Width = 264
+            AutoFill = True
+            ChildSizing.LeftRightSpacing = 6
+            ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+            ChildSizing.EnlargeVertical = crsHomogenousChildResize
+            ChildSizing.ShrinkHorizontal = crsScaleChilds
+            ChildSizing.ShrinkVertical = crsScaleChilds
+            ChildSizing.Layout = cclTopToBottomThenLeftToRight
+            ChildSizing.ControlsPerLine = 1
+            ColumnLayout = clVerticalThenHorizontal
+            Columns = 2
+            DataField = 'status_produto'
+            DataSource = dsProdutos
+            Items.Strings = (
+              'Ativo '
+              'Inativo'
+            )
+            TabOrder = 4
+          end
+          object dbComboBCat: TDBComboBox
+            Left = 185
             Height = 28
             Top = 192
             Width = 125
-            DataField = 'tipo_cliente'
-            DataSource = dsClientes
-            Enabled = False
+            DataField = 'ds_categoria_produto'
+            DataSource = dsProdutos
             ItemHeight = 20
-            Items.Strings = (
-              'Pessoa Física'
-              'Pessoa Jurídica'
-              'Revendedor'
-              'Consumidor Final'
-              'Órgão Governamental'
-              'Distribuidor'
-            )
-            MaxLength = 0
-            TabOrder = 3
-            OnChange = dbComboBTypeChange
-          end
-          object Label1: TLabel
-            Left = 107
-            Height = 25
-            Top = 192
-            Width = 133
-            Caption = 'Tipo de Cliente:'
-            Font.CharSet = ANSI_CHARSET
-            Font.Height = -18
-            Font.Pitch = fpVariable
-            Font.Quality = fqDraft
-            Font.Style = [fsBold]
-            ParentFont = False
-          end
-          object dbedTel: TDBEdit
-            Left = 248
-            Height = 28
-            Top = 323
-            Width = 152
-            DataField = 'telefone_cliente'
-            DataSource = dsClientes
-            Enabled = False
-            MaxLength = 0
-            TabOrder = 4
-            OnChange = dbedTelChange
-          end
-          object dbedtEmail: TDBEdit
-            Left = 248
-            Height = 28
-            Top = 392
-            Width = 260
-            DataField = 'email_cliente'
-            DataSource = dsClientes
-            Enabled = False
             MaxLength = 0
             TabOrder = 5
-          end
-          object Label4: TLabel
-            Left = 48
-            Height = 50
-            Top = 320
-            Width = 192
-            Caption = 'Telefone para contato:'#13#10'Ex: (xx)9xxxx-xxxx'
-            Font.CharSet = ANSI_CHARSET
-            Font.Height = -18
-            Font.Pitch = fpVariable
-            Font.Quality = fqDraft
-            Font.Style = [fsBold]
-            ParentFont = False
-          end
-          object Label5: TLabel
-            Left = 54
-            Height = 50
-            Top = 392
-            Width = 186
-            Caption = '                          Email: '#13#10'Ex: email@email.com'
-            Font.CharSet = ANSI_CHARSET
-            Font.Height = -18
-            Font.Pitch = fpVariable
-            Font.Quality = fqDraft
-            Font.Style = [fsBold]
-            ParentFont = False
           end
         end
       end
     end
   end
-  object dsClientes: TDataSource[1]
-    DataSet = DataModule1.zqryClientes
-    OnStateChange = dsClientesStateChange
-    Left = 1128
-    Top = 232
+  object dsProdutos: TDataSource[1]
+    DataSet = DataModule1.zqryProdutos
+    OnStateChange = dsProdutosStateChange
+    OnDataChange = dsProdutosDataChange
+    Left = 1150
+    Top = 315
   end
 end

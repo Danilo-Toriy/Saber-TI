@@ -1,7 +1,7 @@
 object Menu: TMenu
   Left = 381
   Height = 698
-  Top = 373
+  Top = 268
   Width = 1301
   Align = alClient
   Caption = 'Menu'

@@ -15,6 +15,8 @@ inherited CadUsuariosF: TCadUsuariosF
   inherited PageControl1: TPageControl
     Height = 709
     Width = 1215
+    ActivePage = tbCadastro
+    TabIndex = 1
     inherited tbPesquisa: TTabSheet
       ClientHeight = 676
       ClientWidth = 1207
@@ -132,7 +134,7 @@ inherited CadUsuariosF: TCadUsuariosF
             DataField = 'usuario'
             DataSource = dsUser
             Enabled = False
-            MaxLength = 100
+            MaxLength = 0
             TabOrder = 0
           end
           object Label2: TLabel
@@ -182,7 +184,7 @@ inherited CadUsuariosF: TCadUsuariosF
             DataField = 'nome_completo'
             DataSource = dsUser
             Enabled = False
-            MaxLength = 50
+            MaxLength = 0
             TabOrder = 1
             OnChange = dbedtNameChange
           end
@@ -219,7 +221,7 @@ inherited CadUsuariosF: TCadUsuariosF
             DataField = 'senha'
             DataSource = dsUser
             Enabled = False
-            MaxLength = 50
+            MaxLength = 0
             TabOrder = 3
           end
           object Label5: TLabel
