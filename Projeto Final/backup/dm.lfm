@@ -330,7 +330,7 @@ object DataModule1: TDataModule1
       'on p.categoriaprodutoid = cp.categoriaprodutoid;'
     )
     Params = <>
-    Left = 200
+    Left = 194
     Top = 344
     object zqryProdutosprodutoid: TZIntegerField
       FieldKind = fkData
@@ -422,10 +422,10 @@ object DataModule1: TDataModule1
     )
     InsertSQL.Strings = (
       'INSERT INTO produto'
-      '  (produtoid, ds_produto, ds_categoria_produto, obs_produto, vl_venda_produto, '
+      '  (produtoid, ds_produto, obs_produto, vl_venda_produto, '
       '   dt_cadastro_produto, status_produto, categoriaprodutoid)'
       'VALUES'
-      '  (:produtoid, :ds_produto, :ds_categoria_produto, :obs_produto, :vl_venda_produto, '
+      '  (:produtoid, :ds_produto, :obs_produto, :vl_venda_produto, '
       '   :dt_cadastro_produto, :status_produto, :categoriaprodutoid)'
     )
     ModifySQL.Strings = (
@@ -472,5 +472,20 @@ object DataModule1: TDataModule1
       item
         Name = 'OLD_produtoid'
       end>
+  end
+  object zqryOrcamentos: TZQuery
+    Connection = ZConnection1
+    UpdateObject = updtOrcamentos
+    SQL.Strings = (
+      'select * from orcamento'
+    )
+    Params = <>
+    Left = 194
+    Top = 424
+  end
+  object updtOrcamentos: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    Left = 464
+    Top = 427
   end
 end

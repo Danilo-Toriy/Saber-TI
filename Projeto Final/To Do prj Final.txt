@@ -1,0 +1,35 @@
+FUNCIONALIDADES A SEREM CRIADAS:
+------------------------------------
+Criar o menu   -> FEITO
+Criar o cadastro de Usuários   -> FEITO
+Criar o cadastro de Categorias  -> FEITO
+Criar o cadastro de clientes    -> FEITO
+Criar o cadastro de Produtos    -> FEITO
+Criar o Orçamento
+Criar os relatórios
+Criar a tela de sobre
+Criar o login
+
+-------------------------------------
+Front
+-------------------------------------
+Deixar as telas corretamente alinhas, coloridas e visualmente agradável
+-> feito nas telas criadas, menos o menu;
+
+Adicionar imagens para deixar mais bonito
+
+
+-------------------------------------
+Adicionais
+-------------------------------------
+Validação na entrada do cadastro, de cpf/cnpj, por exemplo
+Diferentes níveis de acesso no sistema
+Senha alterar entre visível e não visível
+Adicionar Sistema de paginação
+Adicionar Sistema de organização da tabela através de filtros
+Outros...
+
+select produtoid, ds_produto, obs_produto, vl_venda_produto, dt_cadastro_produto, 
+status_produto, ds_categoria_produto from produto p
+left join categoria_produto cp
+on p.categoriaprodutoid = cp.categoriaprodutoid;

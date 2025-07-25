@@ -43,6 +43,8 @@ type
     updtClientes: TZUpdateSQL;
     zqryProdutos: TZQuery;
     updtProdutos: TZUpdateSQL;
+    zqryOrcamentos: TZQuery;
+    updtOrcamentos: TZUpdateSQL;
     procedure DataModuleCreate(Sender: TObject);
     procedure ZConnection1AfterConnect(Sender: TObject);
     procedure zqryCategoriasAfterPost(DataSet: TDataSet);
