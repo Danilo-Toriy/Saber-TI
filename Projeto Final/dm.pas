@@ -24,6 +24,11 @@ type
     zqryClientesnome_cliente: TZRawStringField;
     zqryClientestelefone_cliente: TZRawStringField;
     zqryClientestipo_cliente: TZRawStringField;
+    zqryOrcamentosdt_orcamento: TZDateTimeField;
+    zqryOrcamentosdt_validade_orcamento: TZDateTimeField;
+    zqryOrcamentosnome_cliente: TZRawStringField;
+    zqryOrcamentosorcamentoid: TZIntegerField;
+    zqryOrcamentosvl_total_orcamento: TZBCDField;
     zqryProdutoscategoriaprodutoid: TZIntegerField;
     zqryProdutosds_categoria_produto: TZRawStringField;
     zqryProdutosds_produto: TZRawStringField;
@@ -43,6 +48,8 @@ type
     updtClientes: TZUpdateSQL;
     zqryProdutos: TZQuery;
     updtProdutos: TZUpdateSQL;
+    zqryOrcamentos: TZQuery;
+    updtOrcamentos: TZUpdateSQL;
     procedure DataModuleCreate(Sender: TObject);
     procedure ZConnection1AfterConnect(Sender: TObject);
     procedure zqryCategoriasAfterPost(DataSet: TDataSet);

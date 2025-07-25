@@ -33,10 +33,12 @@ type
     procedure btnEditClick(Sender: TObject);
     procedure btnNewClick(Sender: TObject);
     procedure btnRecClick(Sender: TObject);
+    procedure dbComboBCatChange(Sender: TObject);
     procedure dbComboBCatClick(Sender: TObject);
     procedure DBGridModelDblClick(Sender: TObject);
     procedure dsProdutosDataChange(Sender: TObject; Field: TField);
     procedure dsProdutosStateChange(Sender: TObject);
+    procedure edtSearchChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure Label3Click(Sender: TObject);
@@ -71,6 +73,29 @@ begin
    btnEdit.Enabled := (btnNew.Enabled) and not ((Sender as TDataSource).DataSet.IsEmpty);
    btnDel.Enabled := btnEdit.Enabled;
    btnClose.Enabled := btnNew.Enabled;
+end;
+
+procedure TCadProdutosF.edtSearchChange(Sender: TObject);
+begin
+  DataModule1.zqryProdutos.Close;
+  DataModule1.zqryProdutos.SQL.Clear;
+  DataModule1.zqryProdutos.SQL.Add('SELECT '+
+                                   'p.*, c.ds_categoria_produto '+
+                                   'FROM '+
+                                   'produto p '+
+                                   'JOIN categoria_produto c '+
+                                   'ON p.categoriaprodutoid = c.categoriaprodutoid '+
+                                   'WHERE '+
+                                   'CAST(p.produtoid AS TEXT) ILIKE :termo '+
+                                   'OR p.ds_produto ILIKE :termo '+
+                                   'OR obs_produto ILIKE :termo '+
+                                   'OR CAST(p.vl_venda_produto AS TEXT) ILIKE :termo '+
+                                  // 'OR CAST(p.dt_cadastro_produto AS TEXT) ILIKE :termo '+
+                                   'OR c.ds_categoria_produto ILIKE :termo'
+                                   );
+
+  DataModule1.zqryProdutos.ParamByName('termo').AsString := '%' + edtSearch.Text + '%';
+  DataModule1.zqryProdutos.Open;
 end;
 
 procedure TCadProdutosF.FormClose(Sender: TObject; var CloseAction: TCloseAction
@@ -155,6 +180,11 @@ begin
                      end;
 
          end;
+end;
+
+procedure TCadProdutosF.dbComboBCatChange(Sender: TObject);
+begin
+
 end;
 
 procedure TCadProdutosF.dbComboBCatClick(Sender: TObject);

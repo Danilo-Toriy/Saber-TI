@@ -26,6 +26,9 @@ inherited CadProdutosF: TCadProdutosF
         inherited panelSearch: TPanel
           Width = 1192
           ClientWidth = 1192
+          inherited edtSearch: TEdit
+            OnChange = edtSearchChange
+          end
         end
         inherited panelBtns: TPanel
           Top = 616
@@ -101,6 +104,7 @@ inherited CadProdutosF: TCadProdutosF
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             ParentFont = False
+            OnDblClick = DBGridModelDblClick
           end
         end
       end
@@ -294,6 +298,7 @@ inherited CadProdutosF: TCadProdutosF
             Columns = 2
             DataField = 'status_produto'
             DataSource = dsProdutos
+            Enabled = False
             Items.Strings = (
               'Ativo '
               'Inativo'
@@ -307,6 +312,7 @@ inherited CadProdutosF: TCadProdutosF
             Width = 125
             DataField = 'ds_categoria_produto'
             DataSource = dsProdutos
+            Enabled = False
             ItemHeight = 20
             MaxLength = 0
             TabOrder = 5
