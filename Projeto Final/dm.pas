@@ -29,6 +29,13 @@ type
     zqryOrcamentosnome_cliente: TZRawStringField;
     zqryOrcamentosorcamentoid: TZIntegerField;
     zqryOrcamentosvl_total_orcamento: TZBCDField;
+    zqryOrcamento_Itensds_categoria_produto: TZRawStringField;
+    zqryOrcamento_Itensds_produto: TZRawStringField;
+    zqryOrcamento_Itensorcamentoitemid: TZIntegerField;
+    zqryOrcamento_Itensprodutoid: TZIntegerField;
+    zqryOrcamento_Itensqt_produto: TZBCDField;
+    zqryOrcamento_Itensvl_total: TZBCDField;
+    zqryOrcamento_Itensvl_venda_produto: TZBCDField;
     zqryProdutoscategoriaprodutoid: TZIntegerField;
     zqryProdutosds_categoria_produto: TZRawStringField;
     zqryProdutosds_produto: TZRawStringField;
@@ -50,10 +57,13 @@ type
     updtProdutos: TZUpdateSQL;
     zqryOrcamentos: TZQuery;
     updtOrcamentos: TZUpdateSQL;
+    zqryOrcamento_Itens: TZQuery;
+    updtOrcamentos_Itens: TZUpdateSQL;
     procedure DataModuleCreate(Sender: TObject);
     procedure ZConnection1AfterConnect(Sender: TObject);
     procedure zqryCategoriasAfterPost(DataSet: TDataSet);
     procedure zqryClientesAfterPost(DataSet: TDataSet);
+    procedure zqryProdutosAfterPost(DataSet: TDataSet);
     procedure zqryUsuariosAfterPost(DataSet: TDataSet);
   private
 
@@ -97,6 +107,18 @@ begin
                        'cliente '+
                        'ORDER BY clienteid ASC');
   zqryClientes.Open;
+end;
+
+procedure TDataModule1.zqryProdutosAfterPost(DataSet: TDataSet);
+begin
+  zqryProdutos.Close;
+  zqryProdutos.SQL.Clear;
+  zqryProdutos.SQL.Add('SELECT '+
+                       '* '+
+                       'FROM '+
+                       'produto '+
+                       'ORDER BY produtoid ASC');
+  zqryProdutos.Open;
 end;
 
 procedure TDataModule1.zqryUsuariosAfterPost(DataSet: TDataSet);

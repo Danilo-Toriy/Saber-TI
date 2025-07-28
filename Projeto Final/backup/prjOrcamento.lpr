@@ -24,7 +24,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TDataModule1, DataModule1);
   Application.CreateForm(TMenu, Menu);
-  Application.CreateForm(TOrcamentosF, OrcamentosF);
   Application.Run;
 end.
 

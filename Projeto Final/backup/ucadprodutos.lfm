@@ -15,13 +15,15 @@ inherited CadProdutosF: TCadProdutosF
   inherited PageControl1: TPageControl
     Height = 707
     Width = 1200
+    ActivePage = tbCadastro
+    TabIndex = 1
     inherited tbPesquisa: TTabSheet
-      ClientHeight = 674
+      ClientHeight = 679
       ClientWidth = 1192
       inherited Panel1: TPanel
-        Height = 674
+        Height = 679
         Width = 1192
-        ClientHeight = 674
+        ClientHeight = 679
         ClientWidth = 1192
         inherited panelSearch: TPanel
           Width = 1192
@@ -31,7 +33,7 @@ inherited CadProdutosF: TCadProdutosF
           end
         end
         inherited panelBtns: TPanel
-          Top = 616
+          Top = 633
           Width = 1192
           ClientWidth = 1192
           inherited btnNew: TBitBtn
@@ -110,11 +112,11 @@ inherited CadProdutosF: TCadProdutosF
       end
     end
     inherited tbCadastro: TTabSheet
-      ClientHeight = 674
+      ClientHeight = 679
       ClientWidth = 1192
       OnHide = tbCadastroHide
       inherited panelCRUD: TPanel
-        Top = 611
+        Top = 629
         Width = 1192
         ClientWidth = 1192
         inherited btnRec: TBitBtn
@@ -132,11 +134,11 @@ inherited CadProdutosF: TCadProdutosF
       end
       object Panel3: TPanel[1]
         Left = 0
-        Height = 611
+        Height = 629
         Top = 0
         Width = 1192
         Align = alClient
-        ClientHeight = 611
+        ClientHeight = 629
         ClientWidth = 1192
         Color = 16251641
         ParentBackground = False
@@ -144,25 +146,26 @@ inherited CadProdutosF: TCadProdutosF
         TabOrder = 1
         object panelDiv: TPanel
           Left = 144
-          Height = 480
+          Height = 498
           Top = 56
           Width = 905
           Anchors = [akTop, akLeft, akRight, akBottom]
-          ClientHeight = 480
+          ClientHeight = 498
           ClientWidth = 905
           Color = 16643824
           ParentBackground = False
           ParentColor = False
           TabOrder = 0
+          OnClick = panelDivClick
           object dbedtObs: TDBEdit
             Left = 184
-            Height = 28
+            Height = 23
             Top = 256
             Width = 264
             DataField = 'obs_produto'
             DataSource = dsProdutos
             Enabled = False
-            MaxLength = 300
+            MaxLength = 0
             TabOrder = 0
           end
           object Label2: TLabel
@@ -207,18 +210,18 @@ inherited CadProdutosF: TCadProdutosF
           end
           object dbedtProd: TDBEdit
             Left = 185
-            Height = 28
+            Height = 23
             Top = 128
             Width = 231
             DataField = 'ds_produto'
             DataSource = dsProdutos
             Enabled = False
-            MaxLength = 50
+            MaxLength = 0
             TabOrder = 1
           end
           object dbedtProdID: TDBEdit
             Left = 185
-            Height = 28
+            Height = 23
             Top = 64
             Width = 60
             DataField = 'produtoid'
@@ -243,7 +246,7 @@ inherited CadProdutosF: TCadProdutosF
           end
           object dbedtVal: TDBEdit
             Left = 185
-            Height = 28
+            Height = 23
             Top = 320
             Width = 152
             DataField = 'vl_venda_produto'
@@ -307,15 +310,16 @@ inherited CadProdutosF: TCadProdutosF
           end
           object dbComboBCat: TDBComboBox
             Left = 185
-            Height = 28
+            Height = 23
             Top = 192
             Width = 125
             DataField = 'ds_categoria_produto'
             DataSource = dsProdutos
             Enabled = False
-            ItemHeight = 20
+            ItemHeight = 15
             MaxLength = 0
             TabOrder = 5
+            OnChange = dbComboBCatChange
           end
         end
       end

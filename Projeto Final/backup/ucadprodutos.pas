@@ -33,6 +33,7 @@ type
     procedure btnEditClick(Sender: TObject);
     procedure btnNewClick(Sender: TObject);
     procedure btnRecClick(Sender: TObject);
+    procedure dbComboBCatChange(Sender: TObject);
     procedure dbComboBCatClick(Sender: TObject);
     procedure DBGridModelDblClick(Sender: TObject);
     procedure dsProdutosDataChange(Sender: TObject; Field: TField);
@@ -43,6 +44,7 @@ type
     procedure Label3Click(Sender: TObject);
     procedure Label4Click(Sender: TObject);
     procedure Label5Click(Sender: TObject);
+    procedure panelDivClick(Sender: TObject);
     procedure tbCadastroHide(Sender: TObject);
   private
 
@@ -181,6 +183,11 @@ begin
          end;
 end;
 
+procedure TCadProdutosF.dbComboBCatChange(Sender: TObject);
+begin
+
+end;
+
 procedure TCadProdutosF.dbComboBCatClick(Sender: TObject);
 begin
 
@@ -260,6 +267,11 @@ begin
 end;
 
 procedure TCadProdutosF.Label5Click(Sender: TObject);
+begin
+
+end;
+
+procedure TCadProdutosF.panelDivClick(Sender: TObject);
 begin
 
 end;

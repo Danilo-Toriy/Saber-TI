@@ -100,6 +100,7 @@
         <Filename Value="uorcamentos.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="OrcamentosF"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uOrcamentos"/>
       </Unit>
