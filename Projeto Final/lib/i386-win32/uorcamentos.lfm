@@ -1,64 +1,64 @@
 object OrcamentosF: TOrcamentosF
-  Left = 480
-  Height = 798
-  Top = 165
-  Width = 831
+  Left = 426
+  Height = 638
+  Top = 79
+  Width = 671
   Caption = 'OrcamentosF'
-  ClientHeight = 798
-  ClientWidth = 831
-  Constraints.MaxHeight = 950
-  Constraints.MaxWidth = 950
-  Constraints.MinHeight = 650
-  Constraints.MinWidth = 730
-  DesignTimePPI = 120
+  ClientHeight = 638
+  ClientWidth = 671
+  Constraints.MaxHeight = 760
+  Constraints.MaxWidth = 760
+  Constraints.MinHeight = 520
+  Constraints.MinWidth = 584
   LCLVersion = '4.0.0.4'
+  OnShow = FormShow
   object PageControl1: TPageControl
     Left = 0
-    Height = 708
-    Top = 90
-    Width = 831
-    ActivePage = tbOrcs
+    Height = 566
+    Top = 72
+    Width = 671
+    ActivePage = tbNovoOrc
     Align = alClient
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 0
     object tbOrcs: TTabSheet
       Caption = 'Orçamentos'
-      ClientHeight = 675
-      ClientWidth = 823
+      ClientHeight = 538
+      ClientWidth = 663
       TabVisible = False
       object panelBackground: TPanel
         Left = 0
-        Height = 675
+        Height = 538
         Top = 0
-        Width = 823
+        Width = 663
         Align = alClient
-        ClientHeight = 675
-        ClientWidth = 823
+        ClientHeight = 538
+        ClientWidth = 663
         Color = 15985134
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
         object panelFooter: TPanel
-          Left = 11
-          Height = 63
-          Top = 606
-          Width = 801
+          Left = 9
+          Height = 50
+          Top = 483
+          Width = 645
           Align = alBottom
-          BorderSpacing.Left = 10
-          BorderSpacing.Top = 5
-          BorderSpacing.Right = 10
-          BorderSpacing.Bottom = 5
-          ClientHeight = 63
-          ClientWidth = 801
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 4
+          BorderSpacing.Right = 8
+          BorderSpacing.Bottom = 4
+          ClientHeight = 50
+          ClientWidth = 645
           Color = 14272975
           ParentBackground = False
           ParentColor = False
           TabOrder = 0
           object btnNew: TBitBtn
-            Left = 22
-            Height = 38
-            Top = 12
-            Width = 94
+            Left = 18
+            Height = 30
+            Top = 10
+            Width = 75
             Caption = 'Novo'
             Glyph.Data = {
               36090000424D3609000000000000360000002800000018000000180000000100
@@ -140,10 +140,10 @@ object OrcamentosF: TOrcamentosF
             OnClick = btnNewClick
           end
           object btnClose: TBitBtn
-            Left = 688
-            Height = 38
-            Top = 12
-            Width = 94
+            Left = 555
+            Height = 30
+            Top = 10
+            Width = 75
             Anchors = [akTop, akRight]
             Caption = 'Fechar'
             Glyph.Data = {
@@ -228,59 +228,59 @@ object OrcamentosF: TOrcamentosF
         end
         object panelTable: TPanel
           Left = 1
-          Height = 595
-          Top = 6
-          Width = 821
+          Height = 474
+          Top = 5
+          Width = 661
           Align = alClient
-          BorderSpacing.Top = 5
-          BorderSpacing.Bottom = 5
-          ClientHeight = 595
-          ClientWidth = 821
+          BorderSpacing.Top = 4
+          BorderSpacing.Bottom = 4
+          ClientHeight = 474
+          ClientWidth = 661
           Color = clInactiveBorder
           ParentBackground = False
           ParentColor = False
           TabOrder = 1
           object dbGridOrcs: TDBGrid
             Left = 8
-            Height = 586
-            Top = 8
-            Width = 802
+            Height = 467
+            Top = 6
+            Width = 646
             AlternateColor = 15985134
             Anchors = [akTop, akLeft, akRight, akBottom]
-            BorderSpacing.Top = 10
-            BorderSpacing.Bottom = 10
+            BorderSpacing.Top = 8
+            BorderSpacing.Bottom = 8
             Color = 16445950
             Columns = <            
               item
                 Alignment = taCenter
                 Title.Alignment = taCenter
                 Title.Caption = 'ID'
-                Width = 40
+                Width = 32
                 FieldName = 'orcamentoid'
               end            
               item
                 Title.Caption = 'Nome do Cliente'
-                Width = 300
+                Width = 240
                 FieldName = 'nome_cliente'
               end            
               item
                 Alignment = taCenter
                 Title.Alignment = taCenter
                 Title.Caption = 'Data do Orçamento'
-                Width = 154
+                Width = 123
                 FieldName = 'dt_orcamento'
               end            
               item
                 Alignment = taCenter
                 Title.Alignment = taCenter
                 Title.Caption = 'Validade do Orçamento'
-                Width = 170
+                Width = 136
                 FieldName = 'dt_validade_orcamento'
               end            
               item
                 Title.Alignment = taCenter
                 Title.Caption = 'Valor Total'
-                Width = 100
+                Width = 80
                 FieldName = 'vl_total_orcamento'
               end>
             DataSource = dsOrcamentos
@@ -292,42 +292,42 @@ object OrcamentosF: TOrcamentosF
     end
     object tbNovoOrc: TTabSheet
       Caption = 'Novo Orçamento'
-      ClientHeight = 675
-      ClientWidth = 823
+      ClientHeight = 538
+      ClientWidth = 663
       TabVisible = False
       object panelBackground1: TPanel
         Left = 0
-        Height = 675
+        Height = 538
         Top = 0
-        Width = 823
+        Width = 663
         Align = alClient
-        ClientHeight = 675
-        ClientWidth = 823
+        ClientHeight = 538
+        ClientWidth = 663
         Color = 15985134
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
         object panelFooterNew: TPanel
-          Left = 11
-          Height = 63
-          Top = 606
-          Width = 801
+          Left = 9
+          Height = 50
+          Top = 483
+          Width = 645
           Align = alBottom
-          BorderSpacing.Left = 10
-          BorderSpacing.Top = 5
-          BorderSpacing.Right = 10
-          BorderSpacing.Bottom = 5
-          ClientHeight = 63
-          ClientWidth = 801
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 4
+          BorderSpacing.Right = 8
+          BorderSpacing.Bottom = 4
+          ClientHeight = 50
+          ClientWidth = 645
           Color = 14272975
           ParentBackground = False
           ParentColor = False
           TabOrder = 0
           object btnNew1: TBitBtn
-            Left = 22
-            Height = 38
-            Top = 12
-            Width = 94
+            Left = 18
+            Height = 30
+            Top = 10
+            Width = 75
             Caption = 'Novo'
             Glyph.Data = {
               36090000424D3609000000000000360000002800000018000000180000000100
@@ -408,10 +408,10 @@ object OrcamentosF: TOrcamentosF
             TabOrder = 0
           end
           object btnClose1: TBitBtn
-            Left = 688
-            Height = 38
-            Top = 12
-            Width = 94
+            Left = 555
+            Height = 30
+            Top = 10
+            Width = 75
             Anchors = [akTop, akRight]
             Caption = 'Fechar'
             Glyph.Data = {
@@ -494,46 +494,345 @@ object OrcamentosF: TOrcamentosF
             OnClick = btnCloseClick
           end
         end
+        object panelHeaderNewOrc: TPanel
+          Left = 9
+          Height = 91
+          Top = 5
+          Width = 645
+          Align = alTop
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 4
+          BorderSpacing.Right = 8
+          BorderSpacing.Bottom = 4
+          ClientHeight = 91
+          ClientWidth = 645
+          Color = 14994392
+          ParentBackground = False
+          ParentColor = False
+          TabOrder = 1
+          object dbedtOrcId: TDBEdit
+            Left = 136
+            Height = 23
+            Top = 8
+            Width = 56
+            DataField = 'orcamentoid'
+            DataSource = dsOrcamentos
+            Alignment = taRightJustify
+            Enabled = False
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object Label1: TLabel
+            Left = 8
+            Height = 20
+            Top = 8
+            Width = 124
+            Caption = 'ID do Orçamento:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -15
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object dbedtCliente: TDBEdit
+            Left = 64
+            Height = 21
+            Top = 40
+            Width = 128
+            DataField = 'nome_cliente'
+            DataSource = dsOrcamentos
+            ReadOnly = True
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -11
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            MaxLength = 100
+            ParentFont = False
+            TabOrder = 1
+            OnChange = dbedtClienteChange
+          end
+          object Label2: TLabel
+            Left = 8
+            Height = 20
+            Top = 38
+            Width = 52
+            Caption = 'Cliente:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -15
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label3: TLabel
+            Left = 328
+            Height = 20
+            Top = 8
+            Width = 123
+            Anchors = [akTop, akLeft, akRight]
+            Caption = 'Qnt de Produtos: '
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -15
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            OnClick = Label3Click
+          end
+          object Label4: TLabel
+            Left = 261
+            Height = 20
+            Top = 38
+            Width = 184
+            Anchors = [akTop, akLeft, akRight]
+            Caption = 'Valor Total do Orçamento:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -15
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object dbedtTotal: TDBEdit
+            Left = 448
+            Height = 23
+            Top = 38
+            Width = 80
+            DataField = 'vl_total_orcamento'
+            DataSource = dsOrcamentos
+            ReadOnly = True
+            Alignment = taRightJustify
+            Anchors = [akTop, akRight]
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object Label5: TLabel
+            Left = 379
+            Height = 20
+            Top = 67
+            Width = 66
+            Anchors = [akTop, akLeft, akRight]
+            Caption = 'Validade:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -15
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object dbedtValidade: TDBEdit
+            Left = 448
+            Height = 21
+            Top = 68
+            Width = 96
+            DataField = 'dt_validade_orcamento'
+            DataSource = dsOrcamentos
+            ReadOnly = True
+            Anchors = [akTop, akRight]
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -11
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            MaxLength = 0
+            ParentFont = False
+            TabOrder = 3
+          end
+          object Edit1: TEdit
+            Left = 448
+            Height = 23
+            Top = 8
+            Width = 80
+            ReadOnly = True
+            TabOrder = 4
+          end
+        end
+        object panelTableNew: TPanel
+          Left = 7
+          Height = 379
+          Top = 100
+          Width = 649
+          Align = alClient
+          BorderSpacing.Left = 6
+          BorderSpacing.Top = 3
+          BorderSpacing.Right = 6
+          BorderSpacing.Bottom = 3
+          ClientHeight = 379
+          ClientWidth = 649
+          Color = 16643824
+          ParentBackground = False
+          ParentColor = False
+          TabOrder = 2
+          object Label6: TLabel
+            Left = 92
+            Height = 25
+            Top = 32
+            Width = 99
+            Caption = 'ID do Item:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -19
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label7: TLabel
+            Left = 24
+            Height = 25
+            Top = 88
+            Width = 167
+            Caption = 'Escolha o Produto:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -19
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label8: TLabel
+            Left = 82
+            Height = 25
+            Top = 144
+            Width = 109
+            Caption = 'Quantidade:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -19
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label9: TLabel
+            Left = 184
+            Height = 25
+            Top = 251
+            Width = 100
+            Caption = 'Valor Total:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -19
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label10: TLabel
+            Left = 57
+            Height = 25
+            Top = 200
+            Width = 134
+            Caption = 'Preço Unitário:'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -19
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object dbedtOrcItemID: TDBEdit
+            Left = 200
+            Height = 23
+            Top = 34
+            Width = 56
+            DataField = 'orcamentoitemid'
+            DataSource = dsOrcItens
+            Alignment = taRightJustify
+            Enabled = False
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object dbLUCBProd: TDBLookupComboBox
+            Left = 200
+            Height = 23
+            Top = 90
+            Width = 100
+            DataField = 'produtoid'
+            DataSource = dsOrcItens
+            KeyField = 'produtoid'
+            ListField = 'ds_produto'
+            ListFieldIndex = 0
+            ListSource = CadProdutosF.dsProdutos
+            LookupCache = False
+            TabOrder = 1
+          end
+          object dbedtQnt: TDBEdit
+            Left = 200
+            Height = 23
+            Top = 146
+            Width = 80
+            DataField = 'qt_produto'
+            DataSource = dsOrcItens
+            Alignment = taRightJustify
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object DBEdit1: TDBEdit
+            Left = 200
+            Height = 23
+            Top = 202
+            Width = 80
+            DataField = 'vl_venda_produto'
+            DataSource = dsOrcItens
+            Alignment = taRightJustify
+            MaxLength = 0
+            TabOrder = 3
+          end
+          object dbedtTotalNewOrc: TDBEdit
+            Left = 304
+            Height = 33
+            Top = 248
+            Width = 112
+            DataField = 'vl_total'
+            DataSource = dsOrcItens
+            Alignment = taRightJustify
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -19
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            MaxLength = 0
+            ParentFont = False
+            TabOrder = 4
+          end
+        end
       end
     end
     object tbVisuItem: TTabSheet
       Caption = 'Itens do Orçamento'
-      ClientHeight = 675
-      ClientWidth = 823
+      ClientHeight = 538
+      ClientWidth = 663
       TabVisible = False
       object panelBackground2: TPanel
         Left = 0
-        Height = 675
+        Height = 538
         Top = 0
-        Width = 823
+        Width = 663
         Align = alClient
-        ClientHeight = 675
-        ClientWidth = 823
+        ClientHeight = 538
+        ClientWidth = 663
         Color = 15985134
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
         object panelFooterItens: TPanel
-          Left = 11
-          Height = 63
-          Top = 606
-          Width = 801
+          Left = 9
+          Height = 50
+          Top = 483
+          Width = 645
           Align = alBottom
-          BorderSpacing.Left = 10
-          BorderSpacing.Top = 5
-          BorderSpacing.Right = 10
-          BorderSpacing.Bottom = 5
-          ClientHeight = 63
-          ClientWidth = 801
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 4
+          BorderSpacing.Right = 8
+          BorderSpacing.Bottom = 4
+          ClientHeight = 50
+          ClientWidth = 645
           Color = 14272975
           ParentBackground = False
           ParentColor = False
           TabOrder = 0
           object btnNew2: TBitBtn
-            Left = 22
-            Height = 38
-            Top = 12
-            Width = 94
+            Left = 18
+            Height = 30
+            Top = 10
+            Width = 75
             Caption = 'Novo'
             Glyph.Data = {
               36090000424D3609000000000000360000002800000018000000180000000100
@@ -614,10 +913,10 @@ object OrcamentosF: TOrcamentosF
             TabOrder = 0
           end
           object btnClose2: TBitBtn
-            Left = 688
-            Height = 38
-            Top = 12
-            Width = 94
+            Left = 555
+            Height = 30
+            Top = 10
+            Width = 75
             Anchors = [akTop, akRight]
             Caption = 'Fechar'
             Glyph.Data = {
@@ -702,61 +1001,32 @@ object OrcamentosF: TOrcamentosF
         end
         object panelTableItens: TPanel
           Left = 1
-          Height = 595
-          Top = 6
-          Width = 821
+          Height = 474
+          Top = 5
+          Width = 661
           Align = alClient
-          BorderSpacing.Top = 5
-          BorderSpacing.Bottom = 5
-          ClientHeight = 595
-          ClientWidth = 821
+          BorderSpacing.Top = 4
+          BorderSpacing.Bottom = 4
+          ClientHeight = 474
+          ClientWidth = 661
           Color = clInactiveBorder
           ParentBackground = False
           ParentColor = False
           TabOrder = 1
           object dbGridItens: TDBGrid
-            Left = 8
-            Height = 586
-            Top = 8
-            Width = 802
+            Left = 6
+            Height = 456
+            Top = 9
+            Width = 649
+            Align = alClient
             AlternateColor = 15985134
-            Anchors = [akTop, akLeft, akRight, akBottom]
-            BorderSpacing.Top = 10
-            BorderSpacing.Bottom = 10
+            BorderSpacing.Left = 5
+            BorderSpacing.Top = 8
+            BorderSpacing.Right = 5
+            BorderSpacing.Bottom = 8
             Color = 16445950
-            Columns = <            
-              item
-                Alignment = taCenter
-                Title.Alignment = taCenter
-                Title.Caption = 'ID'
-                Width = 40
-                FieldName = 'orcamentoid'
-              end            
-              item
-                Title.Caption = 'Nome do Cliente'
-                Width = 300
-                FieldName = 'nome_cliente'
-              end            
-              item
-                Alignment = taCenter
-                Title.Alignment = taCenter
-                Title.Caption = 'Data do Orçamento'
-                Width = 154
-                FieldName = 'dt_orcamento'
-              end            
-              item
-                Alignment = taCenter
-                Title.Alignment = taCenter
-                Title.Caption = 'Validade do Orçamento'
-                Width = 170
-                FieldName = 'dt_validade_orcamento'
-              end            
-              item
-                Title.Alignment = taCenter
-                Title.Caption = 'Valor Total'
-                Width = 100
-                FieldName = 'vl_total_orcamento'
-              end>
+            Columns = <>
+            DataSource = dsOrcItens
             TabOrder = 0
           end
         end
@@ -764,26 +1034,26 @@ object OrcamentosF: TOrcamentosF
     end
   end
   object panelHeader: TPanel
-    Left = 10
-    Height = 80
-    Top = 5
-    Width = 811
+    Left = 8
+    Height = 64
+    Top = 4
+    Width = 655
     Align = alTop
-    BorderSpacing.Left = 10
-    BorderSpacing.Top = 5
-    BorderSpacing.Right = 10
-    BorderSpacing.Bottom = 5
-    ClientHeight = 80
-    ClientWidth = 811
+    BorderSpacing.Left = 8
+    BorderSpacing.Top = 4
+    BorderSpacing.Right = 8
+    BorderSpacing.Bottom = 4
+    ClientHeight = 64
+    ClientWidth = 655
     Color = 14472166
     ParentBackground = False
     ParentColor = False
     TabOrder = 1
     object logo: TImage
-      Left = 16
-      Height = 64
-      Top = 8
-      Width = 56
+      Left = 13
+      Height = 51
+      Top = 6
+      Width = 45
       Picture.Data = {
         1754506F727461626C654E6574776F726B47726170686963C113040089504E47
         0D0A1A0A0000000D494844520000018B000001C80806000000BF2CC649000000
@@ -9141,15 +9411,15 @@ object OrcamentosF: TOrcamentosF
       Transparent = True
     end
     object TextHeader: TStaticText
-      Left = 293
-      Height = 56
-      Top = 10
-      Width = 216
+      Left = 234
+      Height = 45
+      Top = 8
+      Width = 179
       Anchors = [akTop, akLeft, akRight]
       Caption = 'Orçamentos'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clBlack
-      Font.Height = -37
+      Font.Height = -30
       Font.Name = 'Comic Sans MS'
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
@@ -9160,7 +9430,12 @@ object OrcamentosF: TOrcamentosF
   end
   object dsOrcamentos: TDataSource
     DataSet = DataModule1.zqryOrcamentos
-    Left = 776
-    Top = 680
+    Left = 621
+    Top = 544
+  end
+  object dsOrcItens: TDataSource
+    DataSet = DataModule1.zqryOrcamento_Itens
+    Left = 568
+    Top = 544
   end
 end
