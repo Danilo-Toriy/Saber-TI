@@ -1,7 +1,7 @@
 object XCadModelo: TXCadModelo
   Left = 44
   Height = 646
-  Top = 345
+  Top = 586
   Width = 1241
   Caption = 'Tela de Cadastro'
   ClientHeight = 646

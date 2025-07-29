@@ -1,10 +1,11 @@
 object DataModule1: TDataModule1
   OnCreate = DataModuleCreate
   OldCreateOrder = False
-  Height = 485
-  HorizontalOffset = 541
-  VerticalOffset = 114
-  Width = 460
+  Height = 606
+  HorizontalOffset = 676
+  VerticalOffset = 143
+  Width = 575
+  PPI = 120
   object ZConnection1: TZConnection
     ControlsCodePage = cCP_UTF8
     Properties.Strings = (
@@ -19,8 +20,8 @@ object DataModule1: TDataModule1
     User = 'postgres'
     Password = '12345'
     Protocol = 'postgresql'
-    Left = 64
-    Top = 49
+    Left = 80
+    Top = 61
   end
   object zqryCategorias: TZQuery
     Connection = ZConnection1
@@ -30,8 +31,8 @@ object DataModule1: TDataModule1
       'select * from categoria_produto;'
     )
     Params = <>
-    Left = 154
-    Top = 49
+    Left = 193
+    Top = 61
     object zqryCategoriascategoriaprodutoid: TZIntegerField
       FieldKind = fkData
       FieldName = 'categoriaprodutoid'
@@ -83,8 +84,8 @@ object DataModule1: TDataModule1
       '  categoria_produto.categoriaprodutoid = :OLD_categoriaprodutoid'
     )
     UseSequenceFieldForRefreshSQL = False
-    Left = 371
-    Top = 49
+    Left = 464
+    Top = 61
     ParamData = <    
       item
         Name = 'categoriaprodutoid'
@@ -107,8 +108,8 @@ object DataModule1: TDataModule1
       'select * from usuarios;'
     )
     Params = <>
-    Left = 155
-    Top = 122
+    Left = 194
+    Top = 153
     object zqryUsuariosid: TZIntegerField
       FieldKind = fkData
       FieldName = 'id'
@@ -171,8 +172,8 @@ object DataModule1: TDataModule1
       '  ((usuarios.id IS NULL AND :OLD_id IS NULL) OR (usuarios.id = :OLD_id))'
     )
     UseSequenceFieldForRefreshSQL = False
-    Left = 371
-    Top = 122
+    Left = 464
+    Top = 153
     ParamData = <    
       item
         Name = 'id'
@@ -196,8 +197,8 @@ object DataModule1: TDataModule1
       'select * from usuarios;'
     )
     Params = <>
-    Left = 64
-    Top = 122
+    Left = 80
+    Top = 153
   end
   object zqryClientes: TZQuery
     Connection = ZConnection1
@@ -207,8 +208,8 @@ object DataModule1: TDataModule1
       'select * from cliente'
     )
     Params = <>
-    Left = 155
-    Top = 198
+    Left = 194
+    Top = 248
     object zqryClientesclienteid: TZIntegerField
       FieldKind = fkData
       FieldName = 'clienteid'
@@ -293,8 +294,8 @@ object DataModule1: TDataModule1
       '  cliente.clienteid = :OLD_clienteid'
     )
     UseSequenceFieldForRefreshSQL = False
-    Left = 371
-    Top = 198
+    Left = 464
+    Top = 248
     ParamData = <    
       item
         Name = 'clienteid'
@@ -322,6 +323,7 @@ object DataModule1: TDataModule1
     Connection = ZConnection1
     AfterPost = zqryProdutosAfterPost
     UpdateObject = updtProdutos
+    Active = True
     SQL.Strings = (
       'select produtoid, ds_produto, ds_categoria_produto, obs_produto, vl_venda_produto,'
       'dt_cadastro_produto, status_produto, p.categoriaprodutoid from produto p'
@@ -329,8 +331,8 @@ object DataModule1: TDataModule1
       'on p.categoriaprodutoid = cp.categoriaprodutoid;'
     )
     Params = <>
-    Left = 155
-    Top = 275
+    Left = 194
+    Top = 344
     object zqryProdutosprodutoid: TZIntegerField
       FieldKind = fkData
       FieldName = 'produtoid'
@@ -441,8 +443,8 @@ object DataModule1: TDataModule1
       '  produto.produtoid = :OLD_produtoid'
     )
     UseSequenceFieldForRefreshSQL = False
-    Left = 371
-    Top = 272
+    Left = 464
+    Top = 340
     ParamData = <    
       item
         Name = 'produtoid'
@@ -485,8 +487,8 @@ object DataModule1: TDataModule1
       ''
     )
     Params = <>
-    Left = 155
-    Top = 339
+    Left = 194
+    Top = 424
     object zqryOrcamentosorcamentoid: TZIntegerField
       FieldKind = fkData
       FieldName = 'orcamentoid'
@@ -562,8 +564,8 @@ object DataModule1: TDataModule1
       '  orcamento.orcamentoid = :OLD_orcamentoid'
     )
     UseSequenceFieldForRefreshSQL = False
-    Left = 371
-    Top = 342
+    Left = 464
+    Top = 428
     ParamData = <    
       item
         Name = 'orcamentoid'
@@ -596,7 +598,8 @@ object DataModule1: TDataModule1
       'ds_categoria_produto,'
       'qt_produto,'
       'vl_venda_produto,'
-      'vl_total'
+      'vl_total,'
+      'vl_unitario'
       'FROM orcamento_item orc_it'
       'JOIN produto p '
       'ON orc_it.produtoid = p.produtoid'
@@ -608,8 +611,8 @@ object DataModule1: TDataModule1
       ' '
     )
     Params = <>
-    Left = 152
-    Top = 408
+    Left = 194
+    Top = 510
     object zqryOrcamento_Itensorcamentoitemid: TZIntegerField
       FieldKind = fkData
       FieldName = 'orcamentoitemid'
@@ -625,7 +628,7 @@ object DataModule1: TDataModule1
       Index = 1
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = True
       Size = 50
     end
@@ -635,7 +638,7 @@ object DataModule1: TDataModule1
       Index = 2
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = True
       Size = 50
     end
@@ -659,7 +662,7 @@ object DataModule1: TDataModule1
       Index = 4
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = True
       Precision = 15
       Currency = False
@@ -690,6 +693,20 @@ object DataModule1: TDataModule1
       ReadOnly = False
       Required = True
     end
+    object zqryOrcamento_Itensvl_unitario: TZBCDField
+      FieldKind = fkData
+      FieldName = 'vl_unitario'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = 15
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
   end
   object updtOrcamentos_Itens: TZUpdateSQL
     DeleteSQL.Strings = (
@@ -700,10 +717,10 @@ object DataModule1: TDataModule1
     InsertSQL.Strings = (
       'INSERT INTO orcamento_item'
       '  (orcamentoitemid, produtoid, ds_produto, ds_categoria_produto, qt_produto, '
-      '   vl_venda_produto, vl_total)'
+      '   vl_venda_produto, vl_total, vl_unitario)'
       'VALUES'
       '  (:orcamentoitemid, :produtoid, :ds_produto, :ds_categoria_produto, :qt_produto, '
-      '   :vl_venda_produto, :vl_total)'
+      '   :vl_venda_produto, :vl_total, :vl_unitario)'
     )
     ModifySQL.Strings = (
       'UPDATE orcamento_item SET'
@@ -713,13 +730,14 @@ object DataModule1: TDataModule1
       '  ds_categoria_produto = :ds_categoria_produto,'
       '  qt_produto = :qt_produto,'
       '  vl_venda_produto = :vl_venda_produto,'
-      '  vl_total = :vl_total'
+      '  vl_total = :vl_total,'
+      '  vl_unitario = :vl_unitario'
       'WHERE'
       '  orcamento_item.orcamentoitemid = :OLD_orcamentoitemid'
     )
     UseSequenceFieldForRefreshSQL = False
-    Left = 371
-    Top = 408
+    Left = 464
+    Top = 510
     ParamData = <    
       item
         Name = 'orcamentoitemid'
@@ -741,6 +759,9 @@ object DataModule1: TDataModule1
       end    
       item
         Name = 'vl_total'
+      end    
+      item
+        Name = 'vl_unitario'
       end    
       item
         Name = 'OLD_orcamentoitemid'

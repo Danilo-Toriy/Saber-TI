@@ -12,6 +12,8 @@ type
   { TDataModule1 }
 
   TDataModule1 = class(TDataModule)
+    qryAuxNewOrcds_produto: TZRawStringField;
+    qryAuxNewOrcprodutoid: TZIntegerField;
     ZConnection1: TZConnection;
     zqryCategorias: TZQuery;
     zqryCategoriascategoriaprodutoid: TZIntegerField;
@@ -35,6 +37,7 @@ type
     zqryOrcamento_Itensprodutoid: TZIntegerField;
     zqryOrcamento_Itensqt_produto: TZBCDField;
     zqryOrcamento_Itensvl_total: TZBCDField;
+    zqryOrcamento_Itensvl_unitario: TZBCDField;
     zqryOrcamento_Itensvl_venda_produto: TZBCDField;
     zqryProdutoscategoriaprodutoid: TZIntegerField;
     zqryProdutosds_categoria_produto: TZRawStringField;

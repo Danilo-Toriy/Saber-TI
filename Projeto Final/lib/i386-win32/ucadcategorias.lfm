@@ -28,7 +28,6 @@ inherited CadCategoriasF: TCadCategoriasF
         inherited panelSearch: TPanel
           Width = 1158
           ClientWidth = 1158
-          OnClick = panelSearchClick
           inherited edtSearch: TEdit
             OnChange = edtSearchChange
           end

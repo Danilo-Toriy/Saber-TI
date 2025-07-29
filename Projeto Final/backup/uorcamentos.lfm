@@ -1,64 +1,65 @@
 object OrcamentosF: TOrcamentosF
-  Left = 426
-  Height = 638
-  Top = 79
-  Width = 671
+  Left = 451
+  Height = 798
+  Top = 123
+  Width = 839
   Caption = 'OrcamentosF'
-  ClientHeight = 638
-  ClientWidth = 671
-  Constraints.MaxHeight = 760
-  Constraints.MaxWidth = 760
-  Constraints.MinHeight = 520
-  Constraints.MinWidth = 584
+  ClientHeight = 798
+  ClientWidth = 839
+  Constraints.MaxHeight = 950
+  Constraints.MaxWidth = 950
+  Constraints.MinHeight = 650
+  Constraints.MinWidth = 730
+  DesignTimePPI = 120
   LCLVersion = '4.0.0.4'
   OnShow = FormShow
   object PageControl1: TPageControl
     Left = 0
-    Height = 566
-    Top = 72
-    Width = 671
-    ActivePage = tbNovoOrc
+    Height = 708
+    Top = 90
+    Width = 839
+    ActivePage = tbOrcs
     Align = alClient
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 0
     object tbOrcs: TTabSheet
       Caption = 'Orçamentos'
-      ClientHeight = 538
-      ClientWidth = 663
+      ClientHeight = 675
+      ClientWidth = 831
       TabVisible = False
       object panelBackground: TPanel
         Left = 0
-        Height = 538
+        Height = 675
         Top = 0
-        Width = 663
+        Width = 831
         Align = alClient
-        ClientHeight = 538
-        ClientWidth = 663
+        ClientHeight = 675
+        ClientWidth = 831
         Color = 15985134
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
         object panelFooter: TPanel
-          Left = 9
-          Height = 50
-          Top = 483
-          Width = 645
+          Left = 11
+          Height = 62
+          Top = 607
+          Width = 809
           Align = alBottom
-          BorderSpacing.Left = 8
-          BorderSpacing.Top = 4
-          BorderSpacing.Right = 8
-          BorderSpacing.Bottom = 4
-          ClientHeight = 50
-          ClientWidth = 645
+          BorderSpacing.Left = 10
+          BorderSpacing.Top = 5
+          BorderSpacing.Right = 10
+          BorderSpacing.Bottom = 5
+          ClientHeight = 62
+          ClientWidth = 809
           Color = 14272975
           ParentBackground = False
           ParentColor = False
           TabOrder = 0
           object btnNew: TBitBtn
-            Left = 18
-            Height = 30
-            Top = 10
-            Width = 75
+            Left = 22
+            Height = 38
+            Top = 12
+            Width = 94
             Caption = 'Novo'
             Glyph.Data = {
               36090000424D3609000000000000360000002800000018000000180000000100
@@ -140,10 +141,10 @@ object OrcamentosF: TOrcamentosF
             OnClick = btnNewClick
           end
           object btnClose: TBitBtn
-            Left = 555
-            Height = 30
-            Top = 10
-            Width = 75
+            Left = 696
+            Height = 38
+            Top = 12
+            Width = 94
             Anchors = [akTop, akRight]
             Caption = 'Fechar'
             Glyph.Data = {
@@ -228,59 +229,59 @@ object OrcamentosF: TOrcamentosF
         end
         object panelTable: TPanel
           Left = 1
-          Height = 474
-          Top = 5
-          Width = 661
+          Height = 596
+          Top = 6
+          Width = 829
           Align = alClient
-          BorderSpacing.Top = 4
-          BorderSpacing.Bottom = 4
-          ClientHeight = 474
-          ClientWidth = 661
+          BorderSpacing.Top = 5
+          BorderSpacing.Bottom = 5
+          ClientHeight = 596
+          ClientWidth = 829
           Color = clInactiveBorder
           ParentBackground = False
           ParentColor = False
           TabOrder = 1
           object dbGridOrcs: TDBGrid
             Left = 8
-            Height = 467
-            Top = 6
-            Width = 646
+            Height = 587
+            Top = 8
+            Width = 810
             AlternateColor = 15985134
             Anchors = [akTop, akLeft, akRight, akBottom]
-            BorderSpacing.Top = 8
-            BorderSpacing.Bottom = 8
+            BorderSpacing.Top = 10
+            BorderSpacing.Bottom = 10
             Color = 16445950
             Columns = <            
               item
                 Alignment = taCenter
                 Title.Alignment = taCenter
                 Title.Caption = 'ID'
-                Width = 32
+                Width = 40
                 FieldName = 'orcamentoid'
               end            
               item
                 Title.Caption = 'Nome do Cliente'
-                Width = 240
+                Width = 300
                 FieldName = 'nome_cliente'
               end            
               item
                 Alignment = taCenter
                 Title.Alignment = taCenter
                 Title.Caption = 'Data do Orçamento'
-                Width = 123
+                Width = 154
                 FieldName = 'dt_orcamento'
               end            
               item
                 Alignment = taCenter
                 Title.Alignment = taCenter
                 Title.Caption = 'Validade do Orçamento'
-                Width = 136
+                Width = 170
                 FieldName = 'dt_validade_orcamento'
               end            
               item
                 Title.Alignment = taCenter
                 Title.Caption = 'Valor Total'
-                Width = 80
+                Width = 100
                 FieldName = 'vl_total_orcamento'
               end>
             DataSource = dsOrcamentos
@@ -292,43 +293,43 @@ object OrcamentosF: TOrcamentosF
     end
     object tbNovoOrc: TTabSheet
       Caption = 'Novo Orçamento'
-      ClientHeight = 538
-      ClientWidth = 663
+      ClientHeight = 675
+      ClientWidth = 831
       TabVisible = False
       object panelBackground1: TPanel
         Left = 0
-        Height = 538
+        Height = 675
         Top = 0
-        Width = 663
+        Width = 831
         Align = alClient
-        ClientHeight = 538
-        ClientWidth = 663
+        ClientHeight = 675
+        ClientWidth = 831
         Color = 15985134
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
         object panelFooterNew: TPanel
-          Left = 9
-          Height = 50
-          Top = 483
-          Width = 645
+          Left = 11
+          Height = 62
+          Top = 607
+          Width = 809
           Align = alBottom
-          BorderSpacing.Left = 8
-          BorderSpacing.Top = 4
-          BorderSpacing.Right = 8
-          BorderSpacing.Bottom = 4
-          ClientHeight = 50
-          ClientWidth = 645
+          BorderSpacing.Left = 10
+          BorderSpacing.Top = 5
+          BorderSpacing.Right = 10
+          BorderSpacing.Bottom = 5
+          ClientHeight = 62
+          ClientWidth = 809
           Color = 14272975
           ParentBackground = False
           ParentColor = False
           TabOrder = 0
-          object btnNew1: TBitBtn
-            Left = 18
-            Height = 30
-            Top = 10
-            Width = 75
-            Caption = 'Novo'
+          object btnAdd: TBitBtn
+            Left = 40
+            Height = 38
+            Top = 12
+            Width = 100
+            Caption = 'Adicionar'
             Glyph.Data = {
               36090000424D3609000000000000360000002800000018000000180000000100
               2000000000000009000064000000640000000000000000000000000000000000
@@ -338,65 +339,65 @@ object OrcamentosF: TOrcamentosF
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000260000
-              00CC000000FF000000FF000000FF000000FF000000CC00000026000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000003F000000FF000000FF0000
-              00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
-              003F000000000000000000000000000000000000000000000000000000000000
-              00000000000000000000000000000000008F000000FF000000FF000000F50000
-              004A0000000000000000000000000000000000000045000000EF000000FF0000
-              00FF0000008F0000000000000000000000000000000000000000000000000000
-              00000000000000000000000000A0000000FF000000FF0000003B000000000000
-              00000000000000000000000000000000000000000000000000000000003B0000
-              00FF000000FF000000A000000000000000000000000000000000000000000000
-              0000000000000000003F000000FF000000FF0000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              0000000000FF000000FF0000003F000000000000000000000000000000000000
-              000000000000000000FF000000FF0000003E0000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00000000003E000000FF000000FF000000000000000000000000000000000000
-              000000000022000000FF000000EF000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              000000000000000000EF000000FF000000220000000000000000000000000000
-              0000000000C7000000FF0000003E000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              0000000000000000003E000000FF000000C70000000000000000000000000000
-              0000000000FF000000FF00000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00000000000000000000000000FF000000FF0000000000000000000000000000
-              0000000000FF000000FF000000000000000000000000000000FF000000FF0000
-              00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
-              00000000000000000000000000FF000000FF0000000000000000000000000000
-              0000000000FF000000FF000000000000000000000000000000FF000000FF0000
-              00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
-              00000000000000000000000000FF000000FF0000000000000000000000000000
-              0000000000FF000000FF00000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00000000000000000000000000FF000000FF0000000000000000000000000000
-              0000000000CC000000FF0000004A000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              0000000000000000004A000000FF000000CC0000000000000000000000000000
-              000000000026000000FF000000F5000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              000000000000000000F5000000FF000000260000000000000000000000000000
-              000000000000000000FF000000FF0000003B0000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00000000003B000000FF000000FF000000000000000000000000000000000000
-              0000000000000000003F000000FF000000FF0000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              0000000000FF000000FF0000003F000000000000000000000000000000000000
-              000000000000000000000000008F000000FF000000FF0000003E000000000000
-              00000000000000000000000000000000000000000000000000000000003E0000
-              00FF000000FF0000008F00000000000000000000000000000000000000000000
-              0000000000000000000000000000000000A0000000FF000000FF000000F50000
-              0043000000000000000000000000000000000000003E000000EF000000FF0000
-              00FF000000A00000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000003F000000FF000000FF0000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
+              00FF000000FF000000FF000000FF000000FF0000000000000000000000FF0000
+              00FF000000FF000000FF000000FF000000FF000000FF000000FF000000000000
+              000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
+              00FF000000FF000000FF000000FF000000FF0000000000000000000000FF0000
+              00FF000000FF000000FF000000FF000000FF000000FF000000FF000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
               00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
-              003F000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000220000
-              00C7000000FF000000FF000000FF000000FF000000C700000022000000000000
+              00FF000000FF000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
+              00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+              00FF000000FF000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
@@ -406,14 +407,15 @@ object OrcamentosF: TOrcamentosF
               0000000000000000000000000000000000000000000000000000
             }
             TabOrder = 0
+            OnClick = btnAddClick
           end
-          object btnClose1: TBitBtn
-            Left = 555
-            Height = 30
-            Top = 10
-            Width = 75
+          object btnBack: TBitBtn
+            Left = 674
+            Height = 38
+            Top = 12
+            Width = 94
             Anchors = [akTop, akRight]
-            Caption = 'Fechar'
+            Caption = 'Voltar'
             Glyph.Data = {
               36090000424D3609000000000000360000002800000018000000180000000100
               2000000000000009000064000000640000000000000000000000000000000000
@@ -426,59 +428,59 @@ object OrcamentosF: TOrcamentosF
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              00000000000000000040000000FF000000FF000000FF000000FF000000FF0000
-              00FF000000FF000000FF00000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
-              00FF000000FF000000FF00000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000078000000800000
               0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00000000000000000000000000000000000000000016000000FF000000FF0000
-              0080000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              000000000000000000000000000000000000000000000000002A000000FF0000
-              00FF000000800000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00000000000000000000000000000000000000000000000000000000002A0000
-              00FF000000FF0000008000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000000000000000000000000000000000000000FF000000FF0000
+              00FF000000FF000000FF000000FF000000FF000000FF000000FF0000007A0000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000000000000000000000000000000000000000FF000000FF0000
               00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
-              00FF000000FF000000FF00000080000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
-              00FF000000FF000000FF00000080000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00000000000000000000000000000000000000000000000000000000002A0000
-              00FF000000FF0000008000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              000000000000000000000000000000000000000000000000002A000000FF0000
-              00FF000000800000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00000000000000000000000000000000000000000016000000FF000000FF0000
+              00FF000000130000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000000000000000000000000000000000000E000000ED0000
+              00FF000000FF0000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00DD000000FF000000B400000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000FF000000FF00000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000800000
               0080000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000077000000800000
+              0000000000FF000000FF00000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000080000000FF0000
+              00FF000000200000000000000000000000000000000000000000000000000000
+              0000000000FF000000FF00000000000000000000000000000000000000000000
+              00000000000000000000000000000000000000000080000000FF000000FF0000
+              0024000000000000000000000000000000000000000000000000000000000000
+              00DD000000FF000000B400000000000000000000000000000000000000000000
+              000000000000000000000000000000000080000000FF000000FF000000280000
+              000000000000000000000000000000000000000000000000000E000000ED0000
+              00FF000000FF0000000000000000000000000000000000000000000000000000
+              0000000000000000000000000080000000FF000000FF000000FF000000FF0000
+              00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+              00FF000000130000000000000000000000000000000000000000000000000000
+              0000000000000000000000000080000000FF000000FF000000FF000000FF0000
+              00FF000000FF000000FF000000FF000000FF000000FF000000FF0000007A0000
               0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000000000000000000080000000FF000000FF000000280000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
+              00000000000000000000000000000000000000000080000000FF000000FF0000
+              0024000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000080000000FF0000
+              00FF000000200000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000800000
+              0080000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
-              00FF000000FF000000FF00000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              00000000000000000040000000FF000000FF000000FF000000FF000000FF0000
-              00FF000000FF000000FF00000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
@@ -491,30 +493,30 @@ object OrcamentosF: TOrcamentosF
               0000000000000000000000000000000000000000000000000000
             }
             TabOrder = 1
-            OnClick = btnCloseClick
+            OnClick = btnBackClick
           end
         end
         object panelHeaderNewOrc: TPanel
-          Left = 9
-          Height = 91
-          Top = 5
-          Width = 645
+          Left = 11
+          Height = 114
+          Top = 6
+          Width = 809
           Align = alTop
-          BorderSpacing.Left = 8
-          BorderSpacing.Top = 4
-          BorderSpacing.Right = 8
-          BorderSpacing.Bottom = 4
-          ClientHeight = 91
-          ClientWidth = 645
+          BorderSpacing.Left = 10
+          BorderSpacing.Top = 5
+          BorderSpacing.Right = 10
+          BorderSpacing.Bottom = 5
+          ClientHeight = 114
+          ClientWidth = 809
           Color = 14994392
           ParentBackground = False
           ParentColor = False
           TabOrder = 1
           object dbedtOrcId: TDBEdit
-            Left = 136
-            Height = 23
-            Top = 8
-            Width = 56
+            Left = 170
+            Height = 28
+            Top = 10
+            Width = 70
             DataField = 'orcamentoid'
             DataSource = dsOrcamentos
             Alignment = taRightJustify
@@ -523,28 +525,28 @@ object OrcamentosF: TOrcamentosF
             TabOrder = 0
           end
           object Label1: TLabel
-            Left = 8
-            Height = 20
-            Top = 8
-            Width = 124
+            Left = 10
+            Height = 25
+            Top = 10
+            Width = 158
             Caption = 'ID do Orçamento:'
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -15
+            Font.Height = -19
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             Font.Style = [fsBold]
             ParentFont = False
           end
           object dbedtCliente: TDBEdit
-            Left = 64
-            Height = 21
-            Top = 40
-            Width = 128
+            Left = 80
+            Height = 27
+            Top = 50
+            Width = 160
             DataField = 'nome_cliente'
             DataSource = dsOrcamentos
             ReadOnly = True
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -11
+            Font.Height = -14
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             MaxLength = 100
@@ -553,27 +555,27 @@ object OrcamentosF: TOrcamentosF
             OnChange = dbedtClienteChange
           end
           object Label2: TLabel
-            Left = 8
-            Height = 20
-            Top = 38
-            Width = 52
+            Left = 10
+            Height = 25
+            Top = 48
+            Width = 66
             Caption = 'Cliente:'
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -15
+            Font.Height = -19
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             Font.Style = [fsBold]
             ParentFont = False
           end
           object Label3: TLabel
-            Left = 328
-            Height = 20
-            Top = 8
-            Width = 123
+            Left = 410
+            Height = 25
+            Top = 10
+            Width = 157
             Anchors = [akTop, akLeft, akRight]
             Caption = 'Qnt de Produtos: '
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -15
+            Font.Height = -19
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             Font.Style = [fsBold]
@@ -581,24 +583,24 @@ object OrcamentosF: TOrcamentosF
             OnClick = Label3Click
           end
           object Label4: TLabel
-            Left = 261
-            Height = 20
-            Top = 38
-            Width = 184
+            Left = 326
+            Height = 25
+            Top = 48
+            Width = 233
             Anchors = [akTop, akLeft, akRight]
             Caption = 'Valor Total do Orçamento:'
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -15
+            Font.Height = -19
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             Font.Style = [fsBold]
             ParentFont = False
           end
           object dbedtTotal: TDBEdit
-            Left = 448
-            Height = 23
-            Top = 38
-            Width = 80
+            Left = 563
+            Height = 28
+            Top = 48
+            Width = 100
             DataField = 'vl_total_orcamento'
             DataSource = dsOrcamentos
             ReadOnly = True
@@ -608,30 +610,30 @@ object OrcamentosF: TOrcamentosF
             TabOrder = 2
           end
           object Label5: TLabel
-            Left = 379
-            Height = 20
-            Top = 67
-            Width = 66
+            Left = 474
+            Height = 25
+            Top = 84
+            Width = 85
             Anchors = [akTop, akLeft, akRight]
             Caption = 'Validade:'
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -15
+            Font.Height = -19
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             Font.Style = [fsBold]
             ParentFont = False
           end
           object dbedtValidade: TDBEdit
-            Left = 448
-            Height = 21
-            Top = 68
-            Width = 96
+            Left = 563
+            Height = 27
+            Top = 85
+            Width = 120
             DataField = 'dt_validade_orcamento'
             DataSource = dsOrcamentos
             ReadOnly = True
             Anchors = [akTop, akRight]
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -11
+            Font.Height = -14
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             MaxLength = 0
@@ -639,100 +641,100 @@ object OrcamentosF: TOrcamentosF
             TabOrder = 3
           end
           object Edit1: TEdit
-            Left = 448
-            Height = 23
-            Top = 8
-            Width = 80
+            Left = 560
+            Height = 28
+            Top = 10
+            Width = 100
             ReadOnly = True
             TabOrder = 4
           end
         end
         object panelTableNew: TPanel
-          Left = 7
-          Height = 379
-          Top = 100
-          Width = 649
+          Left = 9
+          Height = 477
+          Top = 125
+          Width = 813
           Align = alClient
-          BorderSpacing.Left = 6
-          BorderSpacing.Top = 3
-          BorderSpacing.Right = 6
-          BorderSpacing.Bottom = 3
-          ClientHeight = 379
-          ClientWidth = 649
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 4
+          BorderSpacing.Right = 8
+          BorderSpacing.Bottom = 4
+          ClientHeight = 477
+          ClientWidth = 813
           Color = 16643824
           ParentBackground = False
           ParentColor = False
           TabOrder = 2
           object Label6: TLabel
-            Left = 92
-            Height = 25
-            Top = 32
-            Width = 99
+            Left = 115
+            Height = 32
+            Top = 40
+            Width = 129
             Caption = 'ID do Item:'
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -19
+            Font.Height = -24
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             Font.Style = [fsBold]
             ParentFont = False
           end
           object Label7: TLabel
-            Left = 24
-            Height = 25
-            Top = 88
-            Width = 167
+            Left = 30
+            Height = 32
+            Top = 110
+            Width = 215
             Caption = 'Escolha o Produto:'
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -19
+            Font.Height = -24
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             Font.Style = [fsBold]
             ParentFont = False
           end
           object Label8: TLabel
-            Left = 82
-            Height = 25
-            Top = 144
-            Width = 109
+            Left = 102
+            Height = 32
+            Top = 180
+            Width = 140
             Caption = 'Quantidade:'
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -19
+            Font.Height = -24
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             Font.Style = [fsBold]
             ParentFont = False
           end
           object Label9: TLabel
-            Left = 184
-            Height = 25
-            Top = 251
-            Width = 100
+            Left = 230
+            Height = 32
+            Top = 314
+            Width = 129
             Caption = 'Valor Total:'
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -19
+            Font.Height = -24
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             Font.Style = [fsBold]
             ParentFont = False
           end
           object Label10: TLabel
-            Left = 57
-            Height = 25
-            Top = 200
-            Width = 134
+            Left = 71
+            Height = 32
+            Top = 250
+            Width = 172
             Caption = 'Preço Unitário:'
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -19
+            Font.Height = -24
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             Font.Style = [fsBold]
             ParentFont = False
           end
           object dbedtOrcItemID: TDBEdit
-            Left = 200
-            Height = 23
-            Top = 34
-            Width = 56
+            Left = 250
+            Height = 28
+            Top = 42
+            Width = 70
             DataField = 'orcamentoitemid'
             DataSource = dsOrcItens
             Alignment = taRightJustify
@@ -741,98 +743,104 @@ object OrcamentosF: TOrcamentosF
             TabOrder = 0
           end
           object dbLUCBProd: TDBLookupComboBox
-            Left = 200
-            Height = 23
-            Top = 90
-            Width = 100
+            Left = 250
+            Height = 28
+            Top = 112
+            Width = 125
             DataField = 'produtoid'
             DataSource = dsOrcItens
             KeyField = 'produtoid'
             ListField = 'ds_produto'
             ListFieldIndex = 0
-            ListSource = CadProdutosF.dsProdutos
+            ListSource = ds_aux_produtos
             LookupCache = False
             TabOrder = 1
+            OnChange = dbLUCBProdChange
+            OnCloseUp = dbLUCBProdCloseUp
           end
           object dbedtQnt: TDBEdit
-            Left = 200
-            Height = 23
-            Top = 146
-            Width = 80
+            Left = 248
+            Height = 28
+            Top = 184
+            Width = 100
             DataField = 'qt_produto'
             DataSource = dsOrcItens
             Alignment = taRightJustify
             MaxLength = 0
             TabOrder = 2
+            OnEditingDone = dbedtQntEditingDone
+            OnKeyPress = dbedtQntKeyPress
           end
           object DBEdit1: TDBEdit
-            Left = 200
-            Height = 23
-            Top = 202
-            Width = 80
-            DataField = 'vl_venda_produto'
+            Left = 250
+            Height = 28
+            Top = 254
+            Width = 100
+            DataField = 'vl_unitario'
             DataSource = dsOrcItens
+            ReadOnly = True
             Alignment = taRightJustify
             MaxLength = 0
             TabOrder = 3
           end
-          object dbedtTotalNewOrc: TDBEdit
-            Left = 304
-            Height = 33
-            Top = 248
-            Width = 112
+          object dbedtTotalNewOrcIt: TDBEdit
+            Left = 376
+            Height = 40
+            Top = 314
+            Width = 140
             DataField = 'vl_total'
             DataSource = dsOrcItens
             Alignment = taRightJustify
             Font.CharSet = ANSI_CHARSET
-            Font.Height = -19
+            Font.Height = -24
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
             MaxLength = 0
             ParentFont = False
             TabOrder = 4
+            OnChange = dbedtTotalNewOrcItChange
           end
         end
       end
     end
     object tbVisuItem: TTabSheet
       Caption = 'Itens do Orçamento'
-      ClientHeight = 538
-      ClientWidth = 663
+      ClientHeight = 675
+      ClientWidth = 831
       TabVisible = False
       object panelBackground2: TPanel
         Left = 0
-        Height = 538
+        Height = 675
         Top = 0
-        Width = 663
+        Width = 831
         Align = alClient
-        ClientHeight = 538
-        ClientWidth = 663
+        ClientHeight = 675
+        ClientWidth = 831
         Color = 15985134
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
         object panelFooterItens: TPanel
-          Left = 9
-          Height = 50
-          Top = 483
-          Width = 645
+          Left = 11
+          Height = 62
+          Top = 607
+          Width = 809
           Align = alBottom
-          BorderSpacing.Left = 8
-          BorderSpacing.Top = 4
-          BorderSpacing.Right = 8
-          BorderSpacing.Bottom = 4
-          ClientHeight = 50
-          ClientWidth = 645
+          BorderSpacing.Left = 10
+          BorderSpacing.Top = 5
+          BorderSpacing.Right = 10
+          BorderSpacing.Bottom = 5
+          ClientHeight = 62
+          ClientWidth = 809
           Color = 14272975
           ParentBackground = False
           ParentColor = False
           TabOrder = 0
           object btnNew2: TBitBtn
-            Left = 18
-            Height = 30
-            Top = 10
-            Width = 75
+            Left = 22
+            Height = 38
+            Top = 12
+            Width = 94
             Caption = 'Novo'
             Glyph.Data = {
               36090000424D3609000000000000360000002800000018000000180000000100
@@ -911,14 +919,15 @@ object OrcamentosF: TOrcamentosF
               0000000000000000000000000000000000000000000000000000
             }
             TabOrder = 0
+            OnClick = btnNew2Click
           end
-          object btnClose2: TBitBtn
-            Left = 555
-            Height = 30
-            Top = 10
-            Width = 75
+          object btnLeave: TBitBtn
+            Left = 696
+            Height = 38
+            Top = 12
+            Width = 94
             Anchors = [akTop, akRight]
-            Caption = 'Fechar'
+            Caption = 'Sair'
             Glyph.Data = {
               36090000424D3609000000000000360000002800000018000000180000000100
               2000000000000009000064000000640000000000000000000000000000000000
@@ -932,59 +941,59 @@ object OrcamentosF: TOrcamentosF
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               00000000000000000040000000FF000000FF000000FF000000FF000000FF0000
-              00FF000000FF000000FF00000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
-              00FF000000FF000000FF00000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000078000000800000
-              0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00000000000000000000000000000000000000000016000000FF000000FF0000
-              0080000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              000000000000000000000000000000000000000000000000002A000000FF0000
-              00FF000000800000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00000000000000000000000000000000000000000000000000000000002A0000
-              00FF000000FF0000008000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
               00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
-              00FF000000FF000000FF00000080000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
-              00FF000000FF000000FF00000080000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00000000000000000000000000000000000000000000000000000000002A0000
-              00FF000000FF0000008000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              000000000000000000000000000000000000000000000000002A000000FF0000
-              00FF000000800000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              00000000000000000000000000000000000000000016000000FF000000FF0000
-              0080000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000077000000800000
-              0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              000000000000000000FF000000FF000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
+              00FF000000FF000000FF00000040000000000000000000000000000000000000
               000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
-              00FF000000FF000000FF00000000000000000000000000000000000000000000
+              00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+              00FF000000FF000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000FF0000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              00EA000000FF000000FF00000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000EF000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000F2000000FF000000FF0000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
+              00FF000000FF000000FF000000FF000000FF000000FF00000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
+              00FF000000FF000000FF000000FF000000FF000000FF00000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000F2000000FF000000FF0000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000EE000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              00EA000000FF000000FF00000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000FF0000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000FF000000FF000000000000000000000000000000000000
+              000000000000000000FF000000FF000000FF000000FF000000FF000000FF0000
+              00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+              00FF000000FF000000FF000000FF000000000000000000000000000000000000
               00000000000000000040000000FF000000FF000000FF000000FF000000FF0000
-              00FF000000FF000000FF00000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
+              00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+              00FF000000FF000000FF00000040000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
@@ -996,36 +1005,76 @@ object OrcamentosF: TOrcamentosF
               0000000000000000000000000000000000000000000000000000
             }
             TabOrder = 1
-            OnClick = btnCloseClick
+            OnClick = btnLeaveClick
           end
         end
         object panelTableItens: TPanel
           Left = 1
-          Height = 474
-          Top = 5
-          Width = 661
+          Height = 596
+          Top = 6
+          Width = 829
           Align = alClient
-          BorderSpacing.Top = 4
-          BorderSpacing.Bottom = 4
-          ClientHeight = 474
-          ClientWidth = 661
+          BorderSpacing.Top = 5
+          BorderSpacing.Bottom = 5
+          ClientHeight = 596
+          ClientWidth = 829
           Color = clInactiveBorder
           ParentBackground = False
           ParentColor = False
           TabOrder = 1
           object dbGridItens: TDBGrid
-            Left = 6
-            Height = 456
-            Top = 9
-            Width = 649
+            Left = 7
+            Height = 574
+            Top = 11
+            Width = 815
             Align = alClient
             AlternateColor = 15985134
-            BorderSpacing.Left = 5
-            BorderSpacing.Top = 8
-            BorderSpacing.Right = 5
-            BorderSpacing.Bottom = 8
+            BorderSpacing.Left = 6
+            BorderSpacing.Top = 10
+            BorderSpacing.Right = 6
+            BorderSpacing.Bottom = 10
             Color = 16445950
-            Columns = <>
+            Columns = <            
+              item
+                Alignment = taCenter
+                Title.Alignment = taCenter
+                Title.Caption = 'ID'
+                Width = 60
+                FieldName = 'orcamentoitemid'
+              end            
+              item
+                Title.Caption = 'Produto'
+                Width = 300
+                FieldName = 'ds_produto'
+              end            
+              item
+                Alignment = taCenter
+                Title.Alignment = taCenter
+                Title.Caption = 'Categoria'
+                Width = 110
+                FieldName = 'ds_categoria_produto'
+              end            
+              item
+                Alignment = taCenter
+                Title.Alignment = taCenter
+                Title.Caption = 'Quant.'
+                Width = 75
+                FieldName = 'qt_produto'
+              end            
+              item
+                Alignment = taCenter
+                Title.Alignment = taCenter
+                Title.Caption = 'Valor Un.'
+                Width = 110
+                FieldName = 'vl_venda_produto'
+              end            
+              item
+                Alignment = taCenter
+                Title.Alignment = taCenter
+                Title.Caption = 'Valor Total'
+                Width = 120
+                FieldName = 'vl_total'
+              end>
             DataSource = dsOrcItens
             TabOrder = 0
           end
@@ -1034,26 +1083,26 @@ object OrcamentosF: TOrcamentosF
     end
   end
   object panelHeader: TPanel
-    Left = 8
-    Height = 64
-    Top = 4
-    Width = 655
+    Left = 10
+    Height = 80
+    Top = 5
+    Width = 819
     Align = alTop
-    BorderSpacing.Left = 8
-    BorderSpacing.Top = 4
-    BorderSpacing.Right = 8
-    BorderSpacing.Bottom = 4
-    ClientHeight = 64
-    ClientWidth = 655
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 5
+    ClientHeight = 80
+    ClientWidth = 819
     Color = 14472166
     ParentBackground = False
     ParentColor = False
     TabOrder = 1
     object logo: TImage
-      Left = 13
-      Height = 51
-      Top = 6
-      Width = 45
+      Left = 16
+      Height = 64
+      Top = 8
+      Width = 56
       Picture.Data = {
         1754506F727461626C654E6574776F726B47726170686963C113040089504E47
         0D0A1A0A0000000D494844520000018B000001C80806000000BF2CC649000000
@@ -9411,15 +9460,15 @@ object OrcamentosF: TOrcamentosF
       Transparent = True
     end
     object TextHeader: TStaticText
-      Left = 234
-      Height = 45
-      Top = 8
-      Width = 179
+      Left = 292
+      Height = 56
+      Top = 10
+      Width = 225
       Anchors = [akTop, akLeft, akRight]
       Caption = 'Orçamentos'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clBlack
-      Font.Height = -30
+      Font.Height = -38
       Font.Name = 'Comic Sans MS'
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
@@ -9430,12 +9479,17 @@ object OrcamentosF: TOrcamentosF
   end
   object dsOrcamentos: TDataSource
     DataSet = DataModule1.zqryOrcamentos
-    Left = 621
-    Top = 544
+    Left = 776
+    Top = 680
   end
   object dsOrcItens: TDataSource
     DataSet = DataModule1.zqryOrcamento_Itens
-    Left = 568
-    Top = 544
+    Left = 710
+    Top = 680
+  end
+  object ds_aux_produtos: TDataSource
+    DataSet = DataModule1.zqryProdutos
+    Left = 648
+    Top = 680
   end
 end
