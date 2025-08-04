@@ -1,0 +1,110 @@
+object EscolheProdutos: TEscolheProdutos
+  Left = 331
+  Height = 365
+  Top = 99
+  Width = 392
+  BorderIcons = [biSystemMenu]
+  Caption = 'Produtos'
+  ClientHeight = 365
+  ClientWidth = 392
+  LCLVersion = '4.0.0.4'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 365
+    Top = 0
+    Width = 392
+    Align = alClient
+    AlternateColor = 15985134
+    Color = 16445950
+    Columns = <    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'ID'
+        Width = 60
+        FieldName = 'produtoid'
+      end    
+      item
+        Title.Caption = 'Produto'
+        Width = 200
+        FieldName = 'ds_produto'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'Categoria'
+        Width = 100
+        FieldName = 'ds_categoria_produto'
+      end>
+    Constraints.MaxHeight = 365
+    Constraints.MaxWidth = 392
+    Constraints.MinHeight = 365
+    Constraints.MinWidth = 392
+    DataSource = dsProdutosEscolha
+    TabOrder = 0
+    OnDblClick = DBGrid1DblClick
+  end
+  object dsProdutosEscolha: TDataSource
+    DataSet = zqryChoose
+    Left = 152
+    Top = 319
+  end
+  object zqryChoose: TZQuery
+    Connection = DataModule1.ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select produtoid, ds_produto, ds_categoria_produto, vl_venda_produto from produto p'
+      'join categoria_produto c'
+      'on p.categoriaprodutoid = c.categoriaprodutoid'
+      'order by ds_produto;'
+    )
+    Params = <>
+    Left = 216
+    Top = 320
+    object zqryChooseprodutoid: TZIntegerField
+      FieldKind = fkData
+      FieldName = 'produtoid'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zqryChooseds_produto: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'ds_produto'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 50
+    end
+    object zqryChooseds_categoria_produto: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'ds_categoria_produto'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 50
+    end
+    object zqryChoosevl_venda_produto: TZBCDField
+      FieldKind = fkData
+      FieldName = 'vl_venda_produto'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = 15
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+  end
+end

@@ -44,6 +44,7 @@ type
     procedure Label3Click(Sender: TObject);
     procedure Label4Click(Sender: TObject);
     procedure Label5Click(Sender: TObject);
+    procedure panelDivClick(Sender: TObject);
     procedure tbCadastroHide(Sender: TObject);
   private
 
@@ -266,6 +267,11 @@ begin
 end;
 
 procedure TCadProdutosF.Label5Click(Sender: TObject);
+begin
+
+end;
+
+procedure TCadProdutosF.panelDivClick(Sender: TObject);
 begin
 
 end;

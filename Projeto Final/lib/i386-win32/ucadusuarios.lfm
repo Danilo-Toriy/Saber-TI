@@ -1,7 +1,7 @@
 inherited CadUsuariosF: TCadUsuariosF
-  Left = 363
+  Left = 386
   Height = 709
-  Top = 156
+  Top = 221
   Width = 1215
   Caption = 'Tela de Cadastro de Usuários'
   ClientHeight = 709

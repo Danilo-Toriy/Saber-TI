@@ -1,7 +1,7 @@
 inherited CadClienteF: TCadClienteF
-  Left = 390
+  Left = 367
   Height = 707
-  Top = 113
+  Top = 184
   Width = 1183
   Caption = 'Tela de Cadastro de Cliente'
   ClientHeight = 707
@@ -15,6 +15,8 @@ inherited CadClienteF: TCadClienteF
   inherited PageControl1: TPageControl
     Height = 707
     Width = 1183
+    ActivePage = tbCadastro
+    TabIndex = 1
     inherited tbPesquisa: TTabSheet
       ClientHeight = 674
       ClientWidth = 1175
@@ -145,7 +147,7 @@ inherited CadClienteF: TCadClienteF
             DataField = 'cpf_cnpj_cliente'
             DataSource = dsClientes
             Enabled = False
-            MaxLength = 18
+            MaxLength = 0
             TabOrder = 0
           end
           object Label2: TLabel
@@ -195,7 +197,7 @@ inherited CadClienteF: TCadClienteF
             DataField = 'nome_cliente'
             DataSource = dsClientes
             Enabled = False
-            MaxLength = 100
+            MaxLength = 0
             TabOrder = 1
           end
           object dbedtClientID: TDBEdit
@@ -252,7 +254,7 @@ inherited CadClienteF: TCadClienteF
             DataField = 'telefone_cliente'
             DataSource = dsClientes
             Enabled = False
-            MaxLength = 20
+            MaxLength = 0
             TabOrder = 4
             OnChange = dbedTelChange
           end
@@ -264,7 +266,7 @@ inherited CadClienteF: TCadClienteF
             DataField = 'email_cliente'
             DataSource = dsClientes
             Enabled = False
-            MaxLength = 100
+            MaxLength = 0
             TabOrder = 5
           end
           object Label4: TLabel

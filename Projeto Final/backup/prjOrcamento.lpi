@@ -26,12 +26,6 @@
     </RunParams>
     <RequiredPackages>
       <Item>
-        <PackageName Value="DateTimeCtrlsDsgn"/>
-      </Item>
-      <Item>
-        <PackageName Value="DateTimeCtrls"/>
-      </Item>
-      <Item>
         <PackageName Value="FCL"/>
       </Item>
       <Item>
@@ -109,6 +103,20 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uOrcamentos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uescolheproduto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="EscolheProdutos"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uEscolheProduto"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uintermedio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Intermedio"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uIntermedio"/>
       </Unit>
     </Units>
   </ProjectOptions>

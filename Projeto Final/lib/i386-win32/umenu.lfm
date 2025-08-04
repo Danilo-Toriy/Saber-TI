@@ -24,6 +24,7 @@ object Menu: TMenu
       end
       object CadProd: TMenuItem
         Caption = 'Produtos'
+        OnClick = CadProdClick
       end
       object CadUser: TMenuItem
         Caption = 'Usuários'
