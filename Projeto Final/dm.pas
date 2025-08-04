@@ -12,8 +12,6 @@ type
   { TDataModule1 }
 
   TDataModule1 = class(TDataModule)
-    qryAuxNewOrcds_produto: TZRawStringField;
-    qryAuxNewOrcprodutoid: TZIntegerField;
     ZConnection1: TZConnection;
     zqryCategorias: TZQuery;
     zqryCategoriascategoriaprodutoid: TZIntegerField;
@@ -26,6 +24,7 @@ type
     zqryClientesnome_cliente: TZRawStringField;
     zqryClientestelefone_cliente: TZRawStringField;
     zqryClientestipo_cliente: TZRawStringField;
+    zqryOrcamentosclienteid: TZIntegerField;
     zqryOrcamentosdt_orcamento: TZDateTimeField;
     zqryOrcamentosdt_validade_orcamento: TZDateTimeField;
     zqryOrcamentosnome_cliente: TZRawStringField;
@@ -33,6 +32,7 @@ type
     zqryOrcamentosvl_total_orcamento: TZBCDField;
     zqryOrcamento_Itensds_categoria_produto: TZRawStringField;
     zqryOrcamento_Itensds_produto: TZRawStringField;
+    zqryOrcamento_Itensorcamentoid: TZBCDField;
     zqryOrcamento_Itensorcamentoitemid: TZIntegerField;
     zqryOrcamento_Itensprodutoid: TZIntegerField;
     zqryOrcamento_Itensqt_produto: TZBCDField;
@@ -66,6 +66,8 @@ type
     procedure ZConnection1AfterConnect(Sender: TObject);
     procedure zqryCategoriasAfterPost(DataSet: TDataSet);
     procedure zqryClientesAfterPost(DataSet: TDataSet);
+    procedure zqryOrcamentosAfterDelete(DataSet: TDataSet);
+    procedure zqryOrcamentosAfterPost(DataSet: TDataSet);
     procedure zqryProdutosAfterPost(DataSet: TDataSet);
     procedure zqryUsuariosAfterPost(DataSet: TDataSet);
   private
@@ -111,6 +113,39 @@ begin
                        'ORDER BY clienteid ASC');
   zqryClientes.Open;
 end;
+
+procedure TDataModule1.zqryOrcamentosAfterDelete(DataSet: TDataSet);
+begin
+  zqryOrcamentos.Close;
+  zqryOrcamentos.SQL.Clear;
+  zqryOrcamentos.SQL.Add('select orcamentoid, '+
+                         'nome_cliente, '+
+                         'orc.clienteid, '+
+                         'dt_orcamento, '+
+                         'dt_validade_orcamento, '+
+                         'vl_total_orcamento '+
+                         'from orcamento orc '+
+                         'left join cliente cli '+
+                         'on orc.clienteid = cli.clienteid;');
+  zqryOrcamentos.Open;
+end;
+
+procedure TDataModule1.zqryOrcamentosAfterPost(DataSet: TDataSet);
+begin
+  zqryOrcamentos.Close;
+  zqryOrcamentos.SQL.Clear;
+  zqryOrcamentos.SQL.Add('select orcamentoid, '+
+                         'nome_cliente, '+
+                         'orc.clienteid, '+
+                         'dt_orcamento, '+
+                         'dt_validade_orcamento, '+
+                         'vl_total_orcamento '+
+                         'from orcamento orc '+
+                         'left join cliente cli '+
+                         'on orc.clienteid = cli.clienteid;');
+  zqryOrcamentos.Open;
+end;
+
 
 procedure TDataModule1.zqryProdutosAfterPost(DataSet: TDataSet);
 begin

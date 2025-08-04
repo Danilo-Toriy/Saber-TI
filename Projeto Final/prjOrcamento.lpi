@@ -100,8 +100,23 @@
         <Filename Value="uorcamentos.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="OrcamentosF"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uOrcamentos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uescolheproduto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="EscolheProdutos"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uEscolheProduto"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uintermedio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Intermedio"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uIntermedio"/>
       </Unit>
     </Units>
   </ProjectOptions>

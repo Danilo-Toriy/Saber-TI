@@ -165,7 +165,7 @@ inherited CadProdutosF: TCadProdutosF
             DataField = 'obs_produto'
             DataSource = dsProdutos
             Enabled = False
-            MaxLength = 0
+            MaxLength = 300
             TabOrder = 0
           end
           object Label2: TLabel
@@ -216,7 +216,7 @@ inherited CadProdutosF: TCadProdutosF
             DataField = 'ds_produto'
             DataSource = dsProdutos
             Enabled = False
-            MaxLength = 0
+            MaxLength = 50
             TabOrder = 1
           end
           object dbedtProdID: TDBEdit
